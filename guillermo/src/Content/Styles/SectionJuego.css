@@ -1,0 +1,125 @@
+.AboutGameContainer{
+    gap: 5rem;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(auto, auto);
+}
+@media (max-width: 2560px){
+    .AboutGameContainer{
+        gap: 5rem;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(auto, auto);
+    }
+}
+@media (max-width: 1920px){
+    .AboutGameContainer{
+        gap: 5rem;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(auto, auto);
+    }
+}
+@media (max-width: 1440px){
+    .AboutGameContainer{
+        gap: 5rem;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(auto, auto);
+    }
+}
+@media (max-width: 1280px){
+    .AboutGameContainer{
+        gap: 5rem;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(auto, auto);
+    }
+}
+@media (max-width: 1024px){
+    .AboutGameContainer{
+        gap: 5rem;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(auto, auto);
+    }
+}
+@media (max-width: 768px){
+    .AboutGameContainer{
+        width: 100%;
+        height: 100%;
+        padding: 4rem;
+        gap: 5rem;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(auto, auto);
+    }
+}
+@media (max-width: 480px){
+    .AboutGameContainer{
+        width: 100%;
+        height: 100%;
+        padding: 4rem;
+        gap: 5rem;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(auto, auto);
+    }
+}
+/* ================================================== */
+.AboutMeContainer{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.AboutContainer{
+    width: 400px;
+    height: 450px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: .90rem;
+    border-left: 4px solid #d5d4d1;
+    /* background-color: blue; */
+
+    .ContainerImgAbout{
+        width: 100%;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        gap: 1.3rem;
+    }
+    .ImgAbout{
+        width: 160px;
+        height: 160px;
+        border: 2px #c7c3bb solid;
+        border-radius: 50%;
+    }
+    .AboutMe{
+        font-size: 2.8rem;
+    }
+    .AboutDescription{
+        font-size: 1.5rem;
+        text-align: center;
+        color: #fff;
+    }
+}
+/* ================================================== */
+.Container{
+    width: 100%;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: yellowgreen; */
+}
+.imgSnake{
+    display: flex;
+    position: absolute;
+    z-index: -1;
+}

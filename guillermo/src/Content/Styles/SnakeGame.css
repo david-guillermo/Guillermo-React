@@ -1,0 +1,85 @@
+.game-container {
+    width: 140px;
+    height: 80px;
+    text-align: center;
+    background-color: rgb(133, 176, 125);
+    color: lime;
+    padding: 20px;
+    margin-top: -160px;
+}
+.start-button {
+    padding: 4px;
+    color: rgb(236, 236, 236);
+    background-color: rgb(43, 72, 43);
+    font-size: .80rem;
+    cursor: pointer;
+    border: none;
+    font-weight: bold;
+}
+.grid {
+    width: 180px;
+    height: 116px;
+    margin-left: -20px;
+    margin-top: -70px;
+    display: flex;
+    flex-direction: column;
+    border: 4px solid rgb(2, 2, 2);
+}
+.row {
+    display: flex;
+}
+.cell {
+    width: 7.6px;
+    height: 4.4px;
+    background-color: rgb(29, 133, 3);
+    border: 1px solid rgb(85, 108, 80);
+}
+.snake {
+    background-color: lime;
+}
+.food {
+    background-color: red;
+}
+
+.mobile-controls{
+    width: 90px;
+    height: 85px;
+    margin-top: 90px;
+    margin-left: -70px;
+    background-color: rgba(85, 85, 85, 0);
+}
+.top{
+    width: 30px;
+    height: 24px;
+    border: 2px solid orange;
+    color: rgba(240, 248, 255, 0);
+    background-color: rgba(240, 248, 255, 0);
+    margin-top: 6px;
+    margin-left: 3px;
+}
+.left{
+    width: 30px;
+    height: 24px;
+    border: 2px solid orange;
+    color: rgba(240, 248, 255, 0);
+    background-color: rgba(240, 248, 255, 0);
+    margin-top: 1px;
+    margin-right: -3px;
+}
+.right{
+    width: 30px;
+    height: 24px;
+    border: 2px solid orange;
+    color: rgba(240, 248, 255, 0);
+    background-color: rgba(240, 248, 255, 0);
+    margin-left: 25px;
+}
+.bottom{
+    width: 30px;
+    height: 24px;
+    border: 2px solid orange;
+    color: rgba(240, 248, 255, 0);
+    background-color: rgba(240, 248, 255, 0);
+    margin-left: 2px;
+    margin-top: 3px;
+}

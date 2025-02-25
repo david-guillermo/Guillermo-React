@@ -1,0 +1,211 @@
+/* .GridCradsProyects{
+    display: flex;
+} */
+.main{
+    width: 15rem;
+    height: 10rem;
+}
+.card {
+    width: 16rem;
+    height: 11rem;
+    background-image: url(https://i.pinimg.com/736x/10/85/23/108523723719c20a2846be09d50e0646.jpg);
+    background-size: 100% 100%;
+    border-radius: 7px;
+    cursor: pointer;
+}
+.fl {
+    display: flex;
+    justify-content: flex-end;
+    opacity: 0;
+    transition: .2s ease-in-out;
+}
+.fl:hover .fullscreen {
+    scale: 1.2;
+}
+.fl:hover .fullscreen_svg {
+    fill: rgb(255, 255, 255);
+}
+.fullscreen {
+    width: 1.5em;
+    height: 1.5em;
+    border-radius: 5px;
+    background-color: #727890;
+    margin: 1em;
+    margin-right: 0.5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: .2s ease-in-out;
+    box-shadow: 2px 2px 6px rgba(255, 255, 255, 0.832);
+}
+.fullscreen_svg {
+    width: 15px;
+    height: 15px;
+    fill: rgba(229, 229, 229, 0.708);
+    transition: .2s ease-in-out;
+}
+.card_back {
+    position: absolute;
+    width: 16rem;
+    height: 14rem;
+    background-color: rgba(255, 255, 255, 0.145);
+    border-radius: 7px;
+    margin-top: -5em;
+    margin-left: 0.7em;
+    transition: .2s ease-in-out;
+    z-index: -1;
+}
+.main:hover .card_back {
+    margin-top: -6.25em;
+    margin-left: 0em;
+    scale: 1.1;
+    height: 17em;
+    cursor: pointer;
+    border: .01rem solid rgba(255, 255, 255, 0.423);
+}
+.main:hover .fl {
+    opacity: 1;
+    cursor: pointer;
+    margin-right: 0.5em;
+}
+.data {
+    display: flex;
+    flex-direction: row;
+    margin-top: 1em;
+}
+.Box-description{
+    width: 60%;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+.title{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+.DescriptionTitle{
+    font-weight: 100;
+    color: rgb(255, 255, 255);
+    font-size: .70rem;
+    font-family: 'Audiowide', sans-serif;
+    margin-right: .20rem;
+}
+.Containerdescription{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: aliceblue;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 5px;
+    background-color: #5A5F73;
+}
+.tooltip {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.tooltip .icon {
+    font-size: 24px;
+    color: #ffffff;
+}
+
+.tooltip-text {
+    visibility: hidden;
+    width: 220px;
+    backdrop-filter: blur(5px);
+    background-color: rgba(15, 15, 15, 0.429);
+    color: #ffffff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 8px;
+    position: absolute;
+    z-index: 1;
+    bottom: 195%;
+    left: 50%;
+    transform: translateX(-90%);
+    opacity: 0;
+    transition: opacity 0.3s;
+    font-size: 14px;
+}
+
+.tooltip:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+}
+
+.img {
+    width: 2.25em;
+    height: 2.25em;
+    background-color: #353535ec;
+    border-radius: 5px;
+    overflow: hidden;
+}
+.text {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-left: 3em;
+    color: white;
+    font-family: 'Audiowide', sans-serif;
+    font-size: .90rem;
+}
+.text_m {
+    font-weight: 200;
+    font-size: 0.9em;
+}
+.text_s {
+    font-size: 0.7em;
+}
+.btns {
+    margin-top: 1rem;
+    display: flex;
+    gap: 0.5em;
+    transition: .2s ease-in-out;
+}
+.views {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.2em;
+    height: 1.8em;
+    border-radius: 4px;
+    margin-top: -0.8em;
+    opacity: 0;
+    background-color: #444857;
+    transition: .28s ease-in-out;
+}
+.views_icons{
+    width: 1.2rem;
+    height: 1.2rem;
+    fill: rgb(219, 90, 4);
+}
+.views:hover {
+    background-color: #5A5F73;
+}
+.main:hover .likes {
+    margin-top: 0.5em;
+    opacity: 1;
+}
+.main:hover .comments {
+    margin-top: 0.5em;
+    opacity: 1;
+}
+.main:hover .views {
+    margin-top: 0.5em;
+    opacity: 1;
+}
+.card_content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.Imagen_Proyecto {
+    font-size: 13px;
+    width: 1.2em;
+    height: 3.3em;
+}
