@@ -1,0 +1,45 @@
+.AboutContainer{
+    width: 320px;
+    height: 390px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem;
+    border-left: 6px solid #d5d4d1;
+    .ContainerImgAbout{
+        width: 100%;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        gap: 1.3rem;
+    }
+    .ImgAbout{
+        width: 120px;
+        height: 120px;
+        border: 2px #c7c3bb solid;
+        border-radius: 50%;
+    }
+    .AboutMe{
+        font-family: 'Audiowide', sans-serif;
+        letter-spacing: 1px;
+        font-size: 2rem;
+    }
+    .AboutDescription{
+        font-size: 1.1rem;
+        text-align: center;
+        color: #fff;
+    }
+}
+.Vene{
+    font-weight: 900;
+    color: gold;
+}
+.zue{
+    font-weight: 900;
+    color: dodgerblue;
+}
+.la{
+    font-weight: 900;
+    color: red;
+}

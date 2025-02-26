@@ -1,9 +1,10 @@
-import { RiMessage2Line } from "@remixicon/react";
-import { SectionJuego } from '../Views/SectionJuego';
 import FotoDePerfil_2 from "../../Assets/FotoDePerfil_2.png";
-import "../Styles/Home.css";
+import { RiMessage2Line } from "@remixicon/react";
 import "@fontsource/audiowide";
-import { SectionProyectos } from "./SectionProyectos";
+import "../Styles/Home.css";
+// ================================================================
+import { SectionJuego } from '../Views/SectionJuego';
+import { SectionProyectos } from "./SectionProyectos"; 
 
 function Home (){
     return(
@@ -14,7 +15,7 @@ function Home (){
                 </div>
                 <div>
                     <div className="Hi">
-                        <span id="Guillermo">Como estas?, Soy Guillermo</span>
+                        <span id="Guillermo">Hola, me llamo Guillermo Arismendi</span>
                     </div>
                     <div className="Iam">
                         <span id="full-Stack">Full Stack Developer</span>
@@ -37,6 +38,8 @@ function Home (){
                     </div>
                 </div>
             </div>
+            <SectionJuego/>
+            <SectionProyectos/>
         </>
     )
 }
