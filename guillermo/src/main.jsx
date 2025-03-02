@@ -1,8 +1,11 @@
 // ==================================COMPONENTS 👀================================
+import { Juego } from "./Content/Components/Juego";
+import { Start } from "./Content/Components/Start";
+import { Habilidades } from "./Content/Components/Habilidades";
+import { Footer } from "./Content/Components/Footer";
 
 // ==================================VIWS 👀======================================
 import { Home } from "./Content/Views/Home";
-import { SectionJuego } from "./Content/Views/SectionJuego";
 import { SectionProyectos } from "./Content/Views/SectionProyectos";
 
 // ================================================================================
@@ -15,9 +18,11 @@ ReactDOM.createRoot(document.getElementById("root")).render(
       {/* <NavBar/> */}
         <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/SectionJuego" element={<SectionJuego />} />
+            <Route path="/Juego" element={<Juego />} />
+            <Route path="/Start" element={<Start />} />
             <Route path="/SectionProyectos" element={<SectionProyectos />} />
+            <Route path="/Habilidades" element={<Habilidades />} />
+            <Route path="/Footer" element={<Footer />} />
         </Routes>
-      {/* <Footer/> */}
     </Router>
 );

@@ -1,19 +1,19 @@
 .ContainerGrid{
-    margin-top: 6rem;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    /* background-color: blue; */
+    /* background-color: rgb(255, 0, 0); */
 }
-.ProyectosTitle{
-
-    height: 100%;
+.ContainerTitle{
+    width: 100%;
+    height: 400px;
     display: flex;
     justify-content: center;
-    align-items: center;
-    /* background-color: aqua; */
+    align-items: end;
+    /* background-color: black; */
 }
 .Proyectos{
     font-family: 'Audiowide', sans-serif;
@@ -27,6 +27,8 @@
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(auto, auto);
     gap: 14rem;
+    transition: all 1s;
+    /* background-color: aqua; */
 }
 @media (max-width: 1280px){
     .GridProyectosCard{
@@ -49,9 +51,8 @@
         width: 100%;
         height: 100%;
         padding: 4rem;
-        /* gap: 5rem; */
         display: grid;
-        grid-template-columns: repeat(1, 1fr);
+        grid-template-columns: repeat(2, 1fr);
         grid-template-rows: repeat(auto, auto);
     }
 }
@@ -66,11 +67,7 @@
 }
 @media (max-width: 320px){
     .GridProyectosCard{
-        width: 100%;
-        height: 100%;
-        gap: 14rem;
-        padding-left: 10rem;
-        padding-right: 4rem;
+        gap: 15rem;
         display: grid;
         grid-template-columns: repeat(1, 1fr);
         grid-template-rows: repeat(auto, auto);

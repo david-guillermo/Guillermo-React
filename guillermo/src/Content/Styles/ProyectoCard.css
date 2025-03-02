@@ -8,10 +8,37 @@
 .card {
     width: 18rem;
     height: 13rem;
-    background-image: url(https://i.pinimg.com/736x/10/85/23/108523723719c20a2846be09d50e0646.jpg);
     background-size: 100% 100%;
     border-radius: 7px;
     cursor: pointer;
+}
+.card_1{
+    background-image: url(https://i.pinimg.com/736x/10/85/23/108523723719c20a2846be09d50e0646.jpg);
+    width: 18rem;
+    height: 13rem;
+    background-size: 100% 100%;
+    border-radius: 7px;
+}
+.card_2{
+    background-image: url(https://i.pinimg.com/736x/4c/14/02/4c14025b493d03c97558bd2636b397bc.jpg);
+    width: 18rem;
+    height: 13rem;
+    background-size: 100% 100%;
+    border-radius: 7px;
+}
+.card_3{
+    background-image: url(https://i.pinimg.com/736x/32/ab/e5/32abe5ff5fac67c1847a7b0818def31d.jpg);
+    width: 18rem;
+    height: 13rem;
+    background-size: 100% 100%;
+    border-radius: 7px;
+}
+.card_4{
+    background-image: url(https://i.pinimg.com/736x/80/95/a4/8095a485d5afc39f53e3ab04dab862bb.jpg);
+    width: 18rem;
+    height: 13rem;
+    background-size: 100% 100%;
+    border-radius: 7px;
 }
 .fl {
     display: flex;

@@ -1,26 +1,20 @@
-.AboutGameContainer{
-    /* gap: 9rem; */
-    width: 100%;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(auto, auto);
-    /* background-color: aliceblue; */
+.ContainerIMGJUEGO{
+    width: 400px;
+    height: 500px;
 }
-/* ======================================================= */
-.Container{
+.Position_ImgJuego{
     width: 100%;
-    /* height: 130vh; */
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    /* background-color: aquamarine; */
 }
 .imgSnake{
     display: flex;
     position: absolute;
     z-index: -1;
 }
-@media (max-width: 1280px){
+/* @media (max-width: 1280px){
     .AboutGameContainer{
         gap: 3rem;
         width: 100%;
@@ -69,4 +63,4 @@
         grid-template-columns: repeat(1, 1fr);
         grid-template-rows: repeat(auto, auto);
     }
-}
+} */

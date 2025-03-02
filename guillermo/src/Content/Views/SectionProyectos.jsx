@@ -4,7 +4,7 @@ import "../Styles/SectionProyectos.css";
 function SectionProyectos  (){
     return (
         <div className="ContainerGrid">
-            <div className="ProyectosTitle">
+            <div className="ContainerTitle">
                 <h1 className="Proyectos">Proyectos</h1>
             </div>
             <div className="GridProyectosCard">

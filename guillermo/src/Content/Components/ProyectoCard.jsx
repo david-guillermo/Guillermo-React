@@ -9,7 +9,7 @@ function ProyectoCard() {
         <>
             <div className="GridCradsProyects">
                 <div className="main">
-                    <div className="card">
+                    <div className="card_1">
                         <div className="fl">
                             <div className="fullscreen">
                                 <RiReplyLine className="fullscreen_svg" />
@@ -51,7 +51,7 @@ function ProyectoCard() {
             </div>
             <div className="GridCradsProyects">
                 <div className="main">
-                    <div className="card">
+                    <div className="card_2">
                         <div className="fl">
                             <div className="fullscreen">
                                 <RiReplyLine className="fullscreen_svg" />
@@ -93,7 +93,7 @@ function ProyectoCard() {
             </div>
             <div className="GridCradsProyects">
                 <div className="main">
-                    <div className="card">
+                    <div className="card_3">
                         <div className="fl">
                             <div className="fullscreen">
                                 <RiReplyLine className="fullscreen_svg" />
@@ -135,7 +135,7 @@ function ProyectoCard() {
             </div>
             <div className="GridCradsProyects">
                 <div className="main">
-                    <div className="card">
+                    <div className="card_4">
                         <div className="fl">
                             <div className="fullscreen">
                                 <RiReplyLine className="fullscreen_svg" />

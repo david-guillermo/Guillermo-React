@@ -1,46 +1,33 @@
-import FotoDePerfil_2 from "../../Assets/FotoDePerfil_2.png";
-import { RiMessage2Line } from "@remixicon/react";
 import "@fontsource/audiowide";
 import "../Styles/Home.css";
-// ================================================================
-import { SectionJuego } from '../Views/SectionJuego';
-import { SectionProyectos } from "./SectionProyectos"; 
+// ============================= VIWS 👀  COMPONENTS 📦=============================
+import { Juego } from "../Components/Juego";
+import { AboutMe } from "../Components/AboutMe";
+import { Start } from "../Components/Start";
+import { SectionProyectos } from "./SectionProyectos";
+import { Habilidades } from "../Components/Habilidades";
+import { Footer } from "../Components/Footer";
 
 function Home (){
     return(
-        <>
-            <div className="Box-content">
-                <div className="Box-imagen">
-                    <img src={FotoDePerfil_2} alt="perfil" id="imagen"/>
-                </div>
-                <div>
-                    <div className="Hi">
-                        <span id="Guillermo">Hola, me llamo Guillermo Arismendi</span>
-                    </div>
-                    <div className="Iam">
-                        <span id="full-Stack">Full Stack Developer</span>
-                    </div>
-                    <div className="Hire-me">
-                        <div className="available">
-                            <div className="availableContainer">
-                                <span className="available-text">Disponible</span>
-                                <RiMessage2Line className="available-icon"/>
-                            </div>
-                        </div>
-                        <div className="hiremebutton">
-                            <a href="#footer-content-title">
-                                <button className="button">
-                                    <span className="base"></span>
-                                    <span className="red"></span>
-                                </button>
-                            </a>
-                        </div>
-                    </div>
-                </div>
+        <div className="ContainerGeneral">
+            <div className="Container_Start">
+                <Start/>
             </div>
-            <SectionJuego/>
-            <SectionProyectos/>
-        </>
+            <div className="Container_AboutMeJuego">
+                <AboutMe/>
+                <Juego/>
+            </div>
+            <div className="Container_Proyectos">
+                <SectionProyectos/>
+            </div>
+            <div className="Container_HabalidadesStudies">
+                <Habilidades/>
+            </div>
+            <div className="Footer">
+                <Footer/>
+            </div>
+        </div>
     )
 }
 export { Home };
