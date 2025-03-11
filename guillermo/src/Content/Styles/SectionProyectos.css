@@ -1,14 +1,14 @@
 .ContainerGrid{
-    width: 100%;
-    height: 100%;
+    /* width: 100%; */
+    /* height: 100%; */
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    /* justify-content: center; */
     align-items: center;
     /* background-color: rgb(255, 0, 0); */
 }
 .ContainerTitle{
-    width: 100%;
+    /* width: 100%; */
     height: 400px;
     display: flex;
     justify-content: center;
@@ -21,6 +21,7 @@
     color: aliceblue;
 }
 .GridProyectosCard{
+    max-width: max-content;
     display: grid;
     justify-content: center;
     align-items: center;
@@ -28,7 +29,7 @@
     grid-template-rows: repeat(auto, auto);
     gap: 14rem;
     transition: all 1s;
-    /* background-color: aqua; */
+    /* background-color: green; */
 }
 @media (max-width: 1280px){
     .GridProyectosCard{
@@ -48,28 +49,24 @@
 }
 @media (max-width: 768px){
     .GridProyectosCard{
-        width: 100%;
-        height: 100%;
-        padding: 4rem;
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(1, 1fr);
         grid-template-rows: repeat(auto, auto);
     }
 }
 @media (max-width: 480px){
     .GridProyectosCard{
-        width: 100%;
-        height: 100%;
+        margin-left: -3rem;
+        gap: 14rem;
         display: grid;
         grid-template-columns: repeat(1, 1fr);
         grid-template-rows: repeat(auto, auto);
     }
 }
-@media (max-width: 320px){
+/* @media (max-width: 320px){
     .GridProyectosCard{
-        gap: 15rem;
         display: grid;
         grid-template-columns: repeat(1, 1fr);
         grid-template-rows: repeat(auto, auto);
     }
-}
+} */

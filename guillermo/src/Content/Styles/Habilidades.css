@@ -1,6 +1,6 @@
 .Container_TitleHabilidades{
     width: 100%;
-    height: 70vh;
+    height: 40vh;
     display: flex;
     justify-content: center;
     align-items: end;
@@ -8,12 +8,11 @@
 }
 .Habilidades{
     font-family: 'Audiowide', sans-serif;
-    font-size: 4rem;
+    font-size: 3.6rem;
     color: aliceblue;
 }
 .ContainerHabilidades{
     width: 100%;
-    height: 100%;
     gap: 2rem;
     display: grid;
     justify-content: center;
@@ -106,7 +105,7 @@
 }
 .Tec{
     font-family: 'Audiowide', sans-serif;
-    font-size: 2.6rem;
+    font-size: 2.4rem;
     color: #b5b5b5;
 }
 

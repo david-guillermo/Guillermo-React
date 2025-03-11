@@ -1,7 +1,7 @@
 import "@fontsource/audiowide";
 import "../Styles/ProyectoCard.css";
 import FotoDePerfil from "../../assets/FotoDePerfil.png";
-import { RiGithubLine, RiHtml5Line } from "@remixicon/react";
+import { RiArrowGoForwardLine, RiGithubLine, RiHtml5Line } from "@remixicon/react";
 
 
 function ProyectoCard() {
@@ -31,6 +31,7 @@ function ProyectoCard() {
                             <div className="tooltip">
                                 <button className="BUTTON_GITHUB">
                                     <RiGithubLine className="icon" />
+                                    <RiArrowGoForwardLine className="icon" />
                                 </button>
                                 <span className="tooltip-text">
                                 Aplicación que administra negocios locales a la vez que ofrece servicio de transporte y delivery de dichos negocios
@@ -69,6 +70,7 @@ function ProyectoCard() {
                             <div className="tooltip">
                                 <button className="BUTTON_GITHUB">
                                     <RiGithubLine className="icon" />
+                                    <RiArrowGoForwardLine className="icon" />
                                 </button>
                                 <span className="tooltip-text">
                                 Aplicación que administra negocios locales a la vez que ofrece servicio de transporte y delivery de dichos negocios
@@ -107,6 +109,7 @@ function ProyectoCard() {
                             <div className="tooltip">
                                 <button className="BUTTON_GITHUB">
                                     <RiGithubLine className="icon" />
+                                    <RiArrowGoForwardLine className="icon" />
                                 </button>
                                 <span className="tooltip-text">
                                 Aplicación que administra negocios locales a la vez que ofrece servicio de transporte y delivery de dichos negocios
@@ -145,6 +148,7 @@ function ProyectoCard() {
                             <div className="tooltip">
                                 <button className="BUTTON_GITHUB">
                                     <RiGithubLine className="icon" />
+                                    <RiArrowGoForwardLine className="icon" />
                                 </button>
                                 <span className="tooltip-text">
                                 Aplicación que administra negocios locales a la vez que ofrece servicio de transporte y delivery de dichos negocios

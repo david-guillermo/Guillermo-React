@@ -15,7 +15,6 @@ import "./index.css";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
     <Router>
-      {/* <NavBar/> */}
         <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/Juego" element={<Juego />} />
