@@ -1,4 +1,5 @@
 import { RiMessage2Line } from "@remixicon/react";
+import { Link } from 'react-scroll';
 // import { RiChatDeleteLine } from "@remixicon/react";
 // ========================================================
 import "../Styles/Start.css";
@@ -27,12 +28,15 @@ function Start (){
                         </div>
                     </div>
                     <div className="hiremebutton">
-                        <a href="">
+                        <Link to="Footer" smooth={true} duration={500}>
                             <button className="button">
                                 <span className="base"></span>
                                 <span className="red"></span>
+                                <div className="Contratame_box">
+                                    <h1 className="Contratame">Contratame</h1>
+                                </div>
                             </button>
-                        </a>
+                        </Link>
                     </div>
                 </div>
             </div>

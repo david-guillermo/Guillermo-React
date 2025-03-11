@@ -24,7 +24,7 @@ function Home (){
             <div className="Container_HabalidadesStudies">
                 <Habilidades/>
             </div>
-            <div className="Footer">
+            <div className="Footer" id="Footer"> 
                 <Footer/>
             </div>
         </div>

@@ -29,7 +29,7 @@
 }
 .Hire-me{
     width: 100%;
-    height: 100px;
+    height: 150px;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(auto, auto);
@@ -43,7 +43,6 @@
         justify-content: center;
         align-items: center;
         font-family: 'Audiowide', sans-serif;
-        /* background-color: blue; */
 
         .availableContainer{
             width: 188px;
@@ -71,6 +70,7 @@
     .hiremebutton{
         width: 100%;
         height: 100%;
+        padding-top: 4rem;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -89,10 +89,10 @@
             height: 1.5em;
             position: absolute;
             border-radius: 50%;
-            top: 50%;
-            left: 50%;
+            top: 30%;
+            left: 14%;
             background-color: #032820;
-            transform: translate(-50%,-50%);
+            transform: translate(-60%,-40%);
             transform-style: preserve-3d;
             display: flex;
             justify-content: center;
@@ -105,7 +105,7 @@
             height: 1em;
             left: 0;
             background-color: #032820;
-            transform: rotateZ(-45deg) translateY(-.5em);
+            transform: rotateZ(-46deg) translateY(-.4rem);
             transition: height 150ms, transform 150ms;
         }
         .red::after {
@@ -123,12 +123,12 @@
         }
         .button > .base {
             position: relative;
-            width: 3em;
-            height: 3em;
+            width: 4em;
+            height: 3.2em;
             background-color: #3f5c4f;
             transform-style: preserve-3d;
-            border-bottom: 1px solid #64c53c;
-            border-right: 1px solid #64c53c;
+            border-bottom: 1px solid #28ed00;
+            border-right: 1px solid #28ed00;
         }
         .base::before {
             content: "";
@@ -140,7 +140,7 @@
             background-color: #3f5c4f;
             transform-origin: bottom;
             transform: rotateX(90deg);
-            border-right: 1px solid #64c53c;
+            border-right: 1px solid #28ed00;
         }
         .base::after {
             content: "";
@@ -160,6 +160,18 @@
         }
         .button:active>.red::after {
             transform: rotateZ(-45deg) translateY(0);
+        }
+    }
+    .Contratame_box{
+        width: 100%;
+        height: 100%;
+        transition: 1s;
+        transform: rotate(-45deg);
+        background-color: #28ed00;
+
+        .Contratame{
+            font-size: 1.6rem;
+            font-family: 'Courier New', Courier, monospace;
         }
     }
 }
