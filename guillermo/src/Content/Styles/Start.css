@@ -165,9 +165,11 @@
     .Contratame_box{
         width: 100%;
         height: 100%;
+        border-radius: 1rem;
         transition: 1s;
         transform: rotate(-45deg);
-        background-color: #28ed00;
+        background-color: #27ed00;
+        color: #000000;
 
         .Contratame{
             font-size: 1.6rem;
