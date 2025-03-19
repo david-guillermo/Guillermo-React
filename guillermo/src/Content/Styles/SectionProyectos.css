@@ -63,10 +63,3 @@
         grid-template-rows: repeat(auto, auto);
     }
 }
-/* @media (max-width: 320px){
-    .GridProyectosCard{
-        display: grid;
-        grid-template-columns: repeat(1, 1fr);
-        grid-template-rows: repeat(auto, auto);
-    }
-} */
