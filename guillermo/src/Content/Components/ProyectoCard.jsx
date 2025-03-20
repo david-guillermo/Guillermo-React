@@ -1,5 +1,10 @@
 import "@fontsource/audiowide";
 import "../Styles/ProyectoCard.css";
+import TurbopackIcon from "../../assets/svg/TurbopackIcon.svg";
+import Nextjs from "../../assets/svg/Nextjs.svg";
+import Shadcnui from "../../assets/svg/Shadcnui.svg";
+import Tailwindcss from "../../assets/svg/Tailwindcss.svg";
+import Typescript from "../../assets/svg/Typescript.svg";
 import FotoDePerfil from "../../assets/FotoDePerfil.png";
 import { RiArrowGoForwardLine, RiGithubLine, RiHtml5Line } from "@remixicon/react";
 
@@ -30,11 +35,15 @@ function ProyectoCard() {
                         <div className="Containerdescription">
                             <div className="tooltip">
                                 <button className="BUTTON_GITHUB">
-                                    <RiGithubLine className="icon" />
-                                    <RiArrowGoForwardLine className="icon" />
+                                    <a href="https://github.com/david-guillermo/Responsive__Online">
+                                        <RiGithubLine className="icon" />
+                                    </a>
+                                    <a href="">
+                                        <RiArrowGoForwardLine className="icon" />
+                                    </a>
                                 </button>
                                 <span className="tooltip-text">
-                                Una pagina desarrollada para la agilización de el desarrollo web
+                                Una pagina web desarrollada para programadores web, donde ayuda al desarrollador a ver las diferentes resoluciones de su proyecto, agilizando asi el desarrollo responsive.
                                 </span>
                             </div>
                         </div>
@@ -42,7 +51,11 @@ function ProyectoCard() {
                 </div>
                 <div className="btns">
                     <div className="views">
-                        <RiHtml5Line className="views_icons" />
+                        <img className="views_icons" src={Nextjs} alt="NextJs" />
+                        <img className="views_icons" src={TurbopackIcon} alt="TurboPack" />
+                        <img className="views_icons" src={Shadcnui} alt="TurboPack" />
+                        <img className="views_icons" src={Tailwindcss} alt="TurboPack" />
+                        <img className="views_icons" src={Typescript} alt="TurboPack" />
                     </div>
                 </div>
             </div>
@@ -69,8 +82,12 @@ function ProyectoCard() {
                         <div className="Containerdescription">
                             <div className="tooltip">
                                 <button className="BUTTON_GITHUB">
-                                    <RiGithubLine className="icon" />
-                                    <RiArrowGoForwardLine className="icon" />
+                                    <a href="">
+                                        <RiGithubLine className="icon" />
+                                    </a>
+                                    <a href="">
+                                        <RiArrowGoForwardLine className="icon" />
+                                    </a>
                                 </button>
                                 <span className="tooltip-text">
                                 Aplicación que administra negocios locales a la vez que ofrece servicio de transporte y delivery de dichos negocios
@@ -108,8 +125,12 @@ function ProyectoCard() {
                         <div className="Containerdescription">
                             <div className="tooltip">
                                 <button className="BUTTON_GITHUB">
-                                    <RiGithubLine className="icon" />
-                                    <RiArrowGoForwardLine className="icon" />
+                                    <a href="">
+                                        <RiGithubLine className="icon" />
+                                    </a>
+                                    <a href="">
+                                        <RiArrowGoForwardLine className="icon" />
+                                    </a>
                                 </button>
                                 <span className="tooltip-text">
                                 Aplicación que administra negocios locales a la vez que ofrece servicio de transporte y delivery de dichos negocios
@@ -147,8 +168,12 @@ function ProyectoCard() {
                         <div className="Containerdescription">
                             <div className="tooltip">
                                 <button className="BUTTON_GITHUB">
-                                    <RiGithubLine className="icon" />
-                                    <RiArrowGoForwardLine className="icon" />
+                                    <a href="">
+                                        <RiGithubLine className="icon" />
+                                    </a>
+                                    <a href="">
+                                        <RiArrowGoForwardLine className="icon" />
+                                    </a>
                                 </button>
                                 <span className="tooltip-text">
                                 Aplicación que administra negocios locales a la vez que ofrece servicio de transporte y delivery de dichos negocios

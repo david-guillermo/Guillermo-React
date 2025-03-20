@@ -16,6 +16,10 @@
     background-size: 100% 100%;
     border-radius: 7px;
 }
+.views_icons{
+    width: 1.6rem;
+    height: 1.6rem;
+}
 .card_2{
     background-image: url(https://i.pinimg.com/736x/4c/14/02/4c14025b493d03c97558bd2636b397bc.jpg);
     width: 18rem;
@@ -160,16 +164,12 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 2.2em;
+    /* width: 2.2em; */
     height: 1.8em;
     border-radius: 4px;
     opacity: 0;
     transition: .28s ease-in-out;
-}
-.views_icons{
-    width: 1.8rem;
-    height: 1.8rem;
-    fill: rgb(255, 255, 255);
+    gap: .70rem;
 }
 .views:hover {
     background-color: #5a5f7300;
