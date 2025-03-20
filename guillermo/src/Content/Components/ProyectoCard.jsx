@@ -23,7 +23,7 @@ function ProyectoCard() {
                         <img className="imgPerfil" src={FotoDePerfil} alt="FotoDePerfil" />
                     </div>
                     <div className="text">
-                        <div className="text_m">Ariwe</div>
+                        <div className="text_m">NovaFlex</div>
                         <div className="text_s">Guillermo</div>
                     </div>
                     <div className="Box-description">
@@ -34,7 +34,7 @@ function ProyectoCard() {
                                     <RiArrowGoForwardLine className="icon" />
                                 </button>
                                 <span className="tooltip-text">
-                                Aplicación que administra negocios locales a la vez que ofrece servicio de transporte y delivery de dichos negocios
+                                Una pagina desarrollada para la agilización de el desarrollo web
                                 </span>
                             </div>
                         </div>
