@@ -35,7 +35,7 @@ function ProyectoCard() {
                         <div className="Containerdescription">
                             <div className="tooltip">
                                 <button className="BUTTON_GITHUB">
-                                    <a href="https://github.com/david-guillermo/Responsive__Online">
+                                    <a href="https://github.com/david-guillermo/Responsive__Online" target="back">
                                         <RiGithubLine className="icon" />
                                     </a>
                                     <a href="">
@@ -75,7 +75,7 @@ function ProyectoCard() {
                         <img className="imgPerfil" src={FotoDePerfil} alt="FotoDePerfil" />
                     </div>
                     <div className="text">
-                        <div className="text_m">Ariwe</div>
+                        <div className="text_m">ERP</div>
                         <div className="text_s">Guillermo</div>
                     </div>
                     <div className="Box-description">
