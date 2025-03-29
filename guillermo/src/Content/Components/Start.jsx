@@ -3,7 +3,7 @@ import { Link } from 'react-scroll';
 // import { RiChatDeleteLine } from "@remixicon/react";
 // ========================================================
 import "../Styles/Start.css";
-import FotoDePerfil from "../../assets/FotoDePerfil.png";
+import FotoDePerfil from "../../assets/FotoDePerfilReal.png";
 
 function Start (){
     return(

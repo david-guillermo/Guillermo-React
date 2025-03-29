@@ -10,7 +10,7 @@
     .Box-imagen #imagen {
         width: 200px;
         height: 200px;
-        border: 4px dashed #ccccc7;
+        border: 3px dashed #ccccc7;
         border-radius: 50%;
         object-fit: cover;
     }
