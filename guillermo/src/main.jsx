@@ -3,6 +3,7 @@ import { Juego } from "./Content/Components/Juego";
 import { Start } from "./Content/Components/Start";
 import { Habilidades } from "./Content/Components/Habilidades";
 import { Footer } from "./Content/Components/Footer";
+import { Laboratorio } from "./Content/Components/Laboratorio";
 
 // ==================================VIWS 👀======================================
 import { Home } from "./Content/Views/Home";
@@ -22,6 +23,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
             <Route path="/SectionProyectos" element={<SectionProyectos />} />
             <Route path="/Habilidades" element={<Habilidades />} />
             <Route path="/Footer" element={<Footer />} />
+            <Route path="/Laboratorio" element={<Laboratorio />} />
         </Routes>
     </Router>
 );
