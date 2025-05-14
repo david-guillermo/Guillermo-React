@@ -7,11 +7,10 @@ import NODEJS from "../../assets/svg/Node.js.svg";
 import EXPRESSJS from "../../assets/svg/Express.js.svg";
 import SQLSERVER from "../../assets/svg/SQLserver.svg";
 import JSONWEBTOKEN from "../../assets/svg/JsonWebToken.svg";
-import TurbopackIcon from "../../assets/svg/TurbopackIcon.svg";
-import Nextjs from "../../assets/svg/Nextjs.svg";
-import Shadcnui from "../../assets/svg/Shadcnui.svg";
-import Tailwindcss from "../../assets/svg/Tailwindcss.svg";
-import Typescript from "../../assets/svg/Typescript.svg";
+import TURBOPACK from "../../assets/svg/TurbopackIcon.svg";
+import NEXTJS from "../../assets/svg/Nextjs.svg";
+import SHADCN from "../../assets/svg/Shadcnui.svg";
+import TYPESCRIPT from "../../assets/svg/TypeScript.svg";
 import FotoDePerfil from "../../assets/FotoDePerfil.png";
 import { RiArrowGoForwardLine, RiGithubLine, RiCheckboxBlankCircleLine, RiCheckboxCircleLine } from "@remixicon/react";
 
@@ -48,11 +47,11 @@ function ProyectoCard() {
                                         <RiGithubLine className="icon" />
                                     </a>
                                     <a href="">
-                                        <RiArrowGoForwardLine className="icon" />
+                                        {/* <RiArrowGoForwardLine className="icon" /> */}
                                     </a>
                                 </div>
                                 <span className="tooltip-text">
-                                Una pagina web desarrollada para programadores web, donde ayuda al desarrollador a ver las diferentes resoluciones de su proyecto, agilizando asi el desarrollo responsive.
+                                    Una pagina web desarrollada para programadores web, donde ayuda al desarrollador a ver las diferentes resoluciones de su proyecto, agilizando asi el desarrollo responsive.
                                 </span>
                             </div>
                         </div>
@@ -60,11 +59,11 @@ function ProyectoCard() {
                 </div>
                 <div className="btns">
                     <div className="views">
-                        <img className="views_icons" src={Nextjs} alt="NextJs" />
-                        <img className="views_icons" src={TurbopackIcon} alt="TurboPack" />
-                        <img className="views_icons" src={Shadcnui} alt="TurboPack" />
-                        <img className="views_icons" src={Tailwindcss} alt="TurboPack" />
-                        <img className="views_icons" src={Typescript} alt="TurboPack" />
+                        <img className="views_icons" src={NEXTJS} alt="NextJs" />
+                        <img className="views_icons" src={TURBOPACK} alt="TurboPack" />
+                        <img className="views_icons" src={SHADCN} alt="TurboPack" />
+                        <img className="views_icons" src={TAILWIND} alt="Tailwind" />
+                        <img className="views_icons" src={TYPESCRIPT} alt="typeScript" />
                     </div>
                 </div>
             </div>
@@ -94,11 +93,11 @@ function ProyectoCard() {
                         <div className="Containerdescription">
                             <div className="tooltip">
                                 <div className="BoxButtons">
-                                    <a href="https://github.com/david-guillermo/Responsive__Online" target="back">
+                                    <a href="https://github.com/david-guillermo/Neptune" target="back">
                                         <RiGithubLine className="icon" />
                                     </a>
                                     <a href="">
-                                        <RiArrowGoForwardLine className="icon" />
+                                        {/* <RiArrowGoForwardLine className="icon" /> */}
                                     </a>
                                 </div>
                                 <span className="tooltip-text">
@@ -140,11 +139,11 @@ function ProyectoCard() {
                         <div className="Containerdescription">
                             <div className="tooltip">
                                 <div className="BoxButtons">
-                                    <a href="https://github.com/david-guillermo/Responsive__Online" target="back">
+                                    <a href="https://github.com/Haonter-ERP" target="back">
                                         <RiGithubLine className="icon" />
                                     </a>
                                     <a href="">
-                                        <RiArrowGoForwardLine className="icon" />
+                                        {/* <RiArrowGoForwardLine className="icon" /> */}
                                     </a>
                                 </div>
                                 <span className="tooltip-text">
