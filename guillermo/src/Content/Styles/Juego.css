@@ -1,6 +1,10 @@
 .ContainerIMGJUEGO{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 400px;
     height: 500px;
+    position: relative;
 }
 .Position_ImgJuego{
     width: 100%;
@@ -12,5 +16,8 @@
 .imgSnake{
     display: flex;
     position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
     z-index: -1;
 }

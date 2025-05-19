@@ -4,10 +4,12 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "start": "vite",
+    "host": "vite --host",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "commit": "git add . && git commit -m 'feat: update && git push origin main'"
   },
   "dependencies": {
     "@fontsource/audiowide": "^5.1.1",
