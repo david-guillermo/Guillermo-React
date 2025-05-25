@@ -1,31 +1,30 @@
-import "@fontsource/audiowide";
 import "../Styles/Home.css";
-// ============================= VIWS 👀  COMPONENTS 📦=============================
-import { Juego } from "../Components/Juego";
+// =============================COMPONENTS 📦=============================
+import { HomePage } from "../Components/HomePage";
 import { AboutMe } from "../Components/AboutMe";
-import { Start } from "../Components/Start";
-import { SectionProyectos } from "./SectionProyectos";
+import { SnakeGame } from "../Components/SnakeGame";
+import { ProyectosCards } from "../Components/ProyectosCards";
 import { Habilidades } from "../Components/Habilidades";
 import { Footer } from "../Components/Footer";
 
 function Home (){
     return(
-        <div className="ContainerGeneral">
-            <div className="Container_Start">
-                <Start/>
+        <div className="AllPortfolio">
+            <div className="HomePage_Portfolio">
+                <HomePage />
             </div>
-            <div className="Container_AboutMeJuego">
-                <AboutMe/>
-                <Juego/>
+            <div className="AboutMe-Juego_Portfolio">
+                <AboutMe />
+                <SnakeGame />
             </div>
-            <div className="Container_Proyectos">
-                <SectionProyectos/>
+            <div className="Proyectos_Portfolio">
+                <ProyectosCards/>
             </div>
-            <div className="Container_HabalidadesStudies">
+            <div className="Habilidades_Portfolio">
                 <Habilidades/>
             </div>
-            <div className="Footer" id="Footer"> 
-                <Footer/>
+            <div className="Footer_Portfolio">
+                <Footer />
             </div>
         </div>
     )

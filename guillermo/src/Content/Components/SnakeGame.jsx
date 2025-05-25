@@ -1,118 +1,343 @@
-import { useState, useEffect, useRef } from "react";
-import "../Styles/SnakeGame.css";
+import { useState, useEffect, useCallback, useRef } from 'react';
+import '../Styles/SnakeGame.css';
 
-const gridSize = 20;
-const initialSnake = [{ x: 10, y: 10 }];
-const initialDirection = { x: 1, y: 0 };
-const foodPosition = () => ({
-x: Math.floor(Math.random() * gridSize),
-y: Math.floor(Math.random() * gridSize),
-});
+const SnakeGame = () => {
+// Tamaño del tablero
+    const gridSize = 19;
+    const cellSize = 12;
 
-function SnakeGame() {
-const [snake, setSnake] = useState(initialSnake);
-const [direction, setDirection] = useState(initialDirection);
-const [food, setFood] = useState(foodPosition);
-const [playPoints, setPlayPoints] = useState(0);
-const [gameOver, setGameOver] = useState(false);
-const [gameStarted, setGameStarted] = useState(false);
-const gameLoop = useRef(null);
-
-useEffect(() => {
-    if (!gameStarted || gameOver) return;
-    gameLoop.current = setInterval(() => {
-    setSnake((prevSnake) => {
-        const newSnake = [...prevSnake];
-        const head = {
-        x: newSnake[0].x + direction.x,
-        y: newSnake[0].y + direction.y,
-        };
-        
-        if (
-        head.x < 0 || head.x >= gridSize ||
-        head.y < 0 || head.y >= gridSize ||
-        newSnake.some((segment) => segment.x === head.x && segment.y === head.y)
-        ) {
-        setGameOver(true);
-        clearInterval(gameLoop.current);
-        return newSnake;
-        }
-        
-        newSnake.unshift(head);
-        if (head.x === food.x && head.y === food.y) {
-        setFood(foodPosition);
-        setPlayPoints((prev) => prev + 1);
-        } else {
-        newSnake.pop();
-        }
-        
-        return newSnake;
-    });
-    }, 150);
+// Estado del juego
+    const [snake, setSnake] = useState([{ x: 10, y: 10 }]);
+    const [food, setFood] = useState({ x: 5, y: 5 });
+    const [direction, setDirection] = useState('RIGHT');
+    const [gameOver, setGameOver] = useState(false);
+    const [gameStarted, setGameStarted] = useState(false);
+    const [score, setScore] = useState(0);
+    const [highScore, setHighScore] = useState(0);
+    const [speed, setSpeed] = useState(150);
+    const [isPaused, setIsPaused] = useState(false);
+    const [gridCells, setGridCells] = useState([]);
     
-    return () => clearInterval(gameLoop.current);
-}, [direction, gameStarted, gameOver]);
+    const gameLoopRef = useRef(null);
+    const lastDirectionRef = useRef(direction);
 
-useEffect(() => {
-    const handleKeyPress = (event) => {
-    const keyMap = {
-        ArrowUp: { x: 0, y: -1 },
-        ArrowDown: { x: 0, y: 1 },
-        ArrowLeft: { x: -1, y: 0 },
-        ArrowRight: { x: 1, y: 0 },
+// Generar comida en posición aleatoria
+    const generateFood = useCallback(() => {
+        const newFood = {
+        x: Math.floor(Math.random() * (gridSize - 2)) + 1,
+        y: Math.floor(Math.random() * (gridSize - 2)) + 1
     };
-    if (keyMap[event.key]) {
-        setDirection(keyMap[event.key]);
+    
+    // Evitar que la comida aparezca donde está la serpiente
+    const isOnSnake = snake.some(segment => segment.x === newFood.x && segment.y === newFood.y);
+    if (isOnSnake) {
+        return generateFood();
     }
+    
+    return newFood;
+    }, [snake]);
+
+// Crear la cuadrícula de celdas
+    useEffect(() => {
+    const cells = [];
+    for (let y = 0; y < gridSize; y++) {
+        for (let x = 0; x < gridSize; x++) {
+            cells.push({ x, y });
+        }
+    }
+    setGridCells(cells);
+    }, [gridSize]);
+
+// Inicializar el juego
+    const startGame = () => {
+        setSnake([{ x: 10, y: 10 }]);
+        setFood(generateFood());
+        setDirection('RIGHT');
+        lastDirectionRef.current = 'RIGHT';
+        setGameOver(false);
+        setGameStarted(true);
+        setIsPaused(false);
+        setScore(0);
     };
-    window.addEventListener("keydown", handleKeyPress);
-    return () => window.removeEventListener("keydown", handleKeyPress);
-}, []);
 
-const startGame = () => {
-    setGameStarted(true);
-    setPlayPoints(0);
-    setGameOver(false);
-    setSnake(initialSnake);
-    setDirection(initialDirection);
-    setFood(foodPosition);
-};
+// Pausar o reanudar el juego
+    const togglePause = () => {
+        setIsPaused(!isPaused);
+    };
 
-return (
-    <div className="game-container">
-    {!gameStarted ? (
-        <button onClick={startGame} className="start-button">Start Game</button>
-    ) : (
-        <>
-        <p>Play Points: {playPoints}</p>
-        <div className="grid">
-            {Array.from({ length: gridSize }).map((_, row) => (
-            <div key={row} className="row">
-                {Array.from({ length: gridSize }).map((_, col) => {
-                const isSnake = snake.some((segment) => segment.x === col && segment.y === row);
-                const isFood = food.x === col && food.y === row;
-                return <div key={col} className={`cell ${isSnake ? "snake" : isFood ? "food" : ""}`}></div>;
+    // Actualizar puntuación más alta
+    useEffect(() => {
+    const storedHighScore = localStorage.getItem('snakeHighScore');
+    if (storedHighScore) {
+      setHighScore(parseInt(storedHighScore, 10));
+    }
+  }, []);
+
+  useEffect(() => {
+    if (score > highScore) {
+      setHighScore(score);
+      localStorage.setItem('snakeHighScore', score.toString());
+    }
+  }, [score, highScore]);
+
+  // Cambiar dirección con eventos de teclado
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (!gameStarted || gameOver) return;
+      
+      switch (e.key) {
+        case 'ArrowUp':
+          if (lastDirectionRef.current !== 'DOWN') {
+            setDirection('UP');
+          }
+          break;
+        case 'ArrowDown':
+          if (lastDirectionRef.current !== 'UP') {
+            setDirection('DOWN');
+          }
+          break;
+        case 'ArrowLeft':
+          if (lastDirectionRef.current !== 'RIGHT') {
+            setDirection('LEFT');
+          }
+          break;
+        case 'ArrowRight':
+          if (lastDirectionRef.current !== 'LEFT') {
+            setDirection('RIGHT');
+          }
+          break;
+        default:
+          break;
+      }
+    };
+
+    document.addEventListener('keydown', handleKeyDown);
+    return () => {
+      document.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [gameStarted, gameOver]);
+
+  // Lógica principal del juego
+  useEffect(() => {
+    if (!gameStarted || gameOver || isPaused) return;
+    
+    const moveSnake = () => {
+      setSnake(prevSnake => {
+        const newSnake = [...prevSnake];
+        const head = { ...newSnake[0] };
+
+        lastDirectionRef.current = direction;
+
+        // Mover la cabeza según la dirección
+        switch (direction) {
+          case 'UP':
+            head.y -= 1;
+            break;
+          case 'DOWN':
+            head.y += 1;
+            break;
+          case 'LEFT':
+            head.x -= 1;
+            break;
+          case 'RIGHT':
+            head.x += 1;
+            break;
+          default:
+            break;
+        }
+
+        // Comprobar colisiones con paredes
+        if (head.x < 0 || head.x >= gridSize || head.y < 0 || head.y >= gridSize) {
+          setGameOver(true);
+          return prevSnake;
+        }
+
+        // Comprobar colisiones con el cuerpo
+        if (newSnake.some((segment, index) => index !== 0 && segment.x === head.x && segment.y === head.y)) {
+          setGameOver(true);
+          return prevSnake;
+        }
+
+        // Insertar nueva cabeza al inicio
+        newSnake.unshift(head);
+
+        // Comprobar si comió la comida
+        if (head.x === food.x && head.y === food.y) {
+          setFood(generateFood());
+          setScore(prev => prev + 10);
+          
+          // Aumentar velocidad cada 50 puntos
+          if (score > 0 && score % 50 === 0) {
+            setSpeed(prevSpeed => Math.max(60, prevSpeed - 10));
+          }
+        } else {
+          // Si no comió, eliminar la cola
+          newSnake.pop();
+        }
+
+        return newSnake;
+      });
+    };
+
+    gameLoopRef.current = setTimeout(moveSnake, speed);
+
+    return () => {
+      clearTimeout(gameLoopRef.current);
+    };
+  }, [direction, food, gameOver, gameStarted, generateFood, isPaused, score, speed]);
+
+  // Manejar cambios de dirección en dispositivos móviles
+  const handleDirectionChange = (newDirection) => {
+    if (
+      (newDirection === 'UP' && lastDirectionRef.current !== 'DOWN') ||
+      (newDirection === 'DOWN' && lastDirectionRef.current !== 'UP') ||
+      (newDirection === 'LEFT' && lastDirectionRef.current !== 'RIGHT') ||
+      (newDirection === 'RIGHT' && lastDirectionRef.current !== 'LEFT')
+    ) {
+      setDirection(newDirection);
+    }
+  };
+
+  // Comprobar si una celda es parte de la serpiente
+  const isSnakeCell = (x, y) => {
+    return snake.some((segment, index) => {
+      if (segment.x === x && segment.y === y) {
+        return index === 0 ? 'head' : 'body';
+      }
+      return false;
+    });
+  };
+
+  // Comprobar si una celda contiene comida
+  const isFoodCell = (x, y) => {
+    return food.x === x && food.y === y;
+  };
+
+  return (
+    <div className="gameboy-container">
+      <div className="gameboy-body">
+        <span className="gameboy-brand">NINTENDO</span>
+        <span className="gameboy-logo">®</span>
+        
+        <div className="gameboy-screen-container">
+          <div className="snake-game">
+            <div className="game-header">
+              <h1 className="game-title">SNAKE</h1>
+              <div className="score-container">
+                <div className="score">
+                  <span>SCORE: {score}</span>
+                </div>
+                <div className="high-score">
+                  <span>HIGH: {highScore}</span>
+                </div>
+              </div>
+            </div>
+            
+            <div className="game-area">
+              <div 
+                className="game-board"
+                style={{
+                  gridTemplateColumns: `repeat(${gridSize}, ${cellSize}px)`,
+                  gridTemplateRows: `repeat(${gridSize}, ${cellSize}px)`,
+                }}
+              >
+                {/* Renderizar la cuadrícula con líneas visibles */}
+                {gridCells.map((cell, index) => {
+                  const snakeStatus = isSnakeCell(cell.x, cell.y);
+                  const isFood = isFoodCell(cell.x, cell.y);
+                  
+                  return (
+                    <div
+                      key={`cell-${index}`}
+                      className={`grid-cell ${snakeStatus === 'head' ? 'snake-head' : ''} ${snakeStatus ? 'snake-segment' : ''} ${isFood ? 'food' : ''}`}
+                      style={{
+                        width: `${cellSize}px`,
+                        height: `${cellSize}px`,
+                        gridColumnStart: cell.x + 1,
+                        gridRowStart: cell.y + 1,
+                      }}
+                    />
+                  );
                 })}
+              </div>
+              
+              {/* Overlay para mostrar mensajes */}
+              {!gameStarted && !gameOver && (
+                <div className="game-overlay">
+                  <h2>SNAKE GAME</h2>
+                  <p>Usa las flechas para moverte</p>
+                  <button onClick={startGame} className="start-button">INICIAR</button>
+                </div>
+              )}
+              
+              {gameOver && (
+                <div className="game-overlay">
+                  <h2>GAME OVER</h2>
+                  <p>Puntuación final: {score}</p>
+                  <button onClick={startGame} className="start-button">JUGAR DE NUEVO</button>
+                </div>
+              )}
             </div>
-            ))}
+          </div>
         </div>
-        {gameOver && (
-            <div>
-            <button onClick={startGame} className="start-button">Play Again</button>
+
+        {/* GameBoy-styled controls */}
+        <div className="gameboy-controls">
+          <div className="dpad-container">
+            <div className="dpad">
+              <button 
+                className="dpad-button dpad-up" 
+                onClick={() => handleDirectionChange('UP')}
+              >
+                ▲
+              </button>
+              <button 
+                className="dpad-button dpad-left" 
+                onClick={() => handleDirectionChange('LEFT')}
+              >
+                ◄
+              </button>
+              <div className="dpad-center"></div>
+              <button 
+                className="dpad-button dpad-right" 
+                onClick={() => handleDirectionChange('RIGHT')}
+              >
+                ►
+              </button>
+              <button 
+                className="dpad-button dpad-down" 
+                onClick={() => handleDirectionChange('DOWN')}
+              >
+                ▼
+              </button>
             </div>
-        )}
-        <div className="mobile-controls">
-            <button className="top" onClick={() => setDirection({ x: 0, y: -1 })}>▲</button>
-            <div>
-                <button className="left" onClick={() => setDirection({ x: -1, y: 0 })}>◄</button>
-                <button className="right" onClick={() => setDirection({ x: 1, y: 0 })}>►</button>
+          </div>
+
+          <div className="action-buttons">
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+              <button className="action-button">B</button>
+              <span className="gameboy-button-label">B</span>
             </div>
-            <button className="bottom" onClick={() => setDirection({ x: 0, y: 1 })}>▼</button>
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+              <button className="action-button">A</button>
+              <span className="gameboy-button-label">A</span>
+            </div>
+          </div>
+
+          <div className="start-select-buttons">
+            <div className="container-Select-Start">
+              <button className="gameboy-select-button"></button>
+              <span className="gameboy-button-label">SELECT</span>
+            </div>
+            <div className="container-Select-Start">
+              <button className="gameboy-start-button" onClick={gameStarted && !gameOver ? togglePause : startGame} ></button>
+              <span className="gameboy-button-label">START</span>
+            </div>
+          </div>
         </div>
-        </>
-    )}
+      </div>
     </div>
-);
-}
+  );
+};
 
 export { SnakeGame };

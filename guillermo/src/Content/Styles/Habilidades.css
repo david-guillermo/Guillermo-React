@@ -1,1402 +1,451 @@
 :root{
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
-
 .Container_TitleHabilidades{
-    width: 100%;
-    height: 60vh;
-    display: flex;
-    justify-content: center;
-    align-items: end;
-    /* background-color: #000000; */
+  width: 100%;
+  height: 20vh;
+  display: flex;
+  justify-content: center;
+  align-items: end;
 }
 .Habilidades{
-    font-family: 'Audiowide', sans-serif;
-    font-size: 3.6rem;
-    color: aliceblue;
+  font-family: 'Audiowide', sans-serif;
+  font-size: 3.6rem;
+  color: aliceblue;
 }
 .ContainerHabilidades{
-    width: 100%;
-    gap: 2rem;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    transition: all 500ms;
+  width: 100%;
+  gap: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  transition: all 500ms;
 }
-
-
 .Container_Tec{
-    width: 100%;
-    height: 200px;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    /* background-color: #0062ff; */
+  width: 100%;
+  height: 200px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .Tec{
-    font-family: 'Audiowide', sans-serif;
-    font-size: 2.4rem;
-    color: #b5b5b5;
+  font-family: 'Audiowide', sans-serif;
+  font-size: 2.4rem;
+  color: #b5b5b5;
 }
-
-.button-html {
-    cursor: pointer;
-    border: none;
-    background: #ff8800;
-    color: #000000;
-    width: 160px;
-    height: 160px;
-    border-radius: 50%;
-    overflow: hidden;
-    position: relative;
-    display: grid;
-    place-content: center;
-    transition:
-    background 300ms,
-    transform 200ms;
-    font-weight: 600;
+/* ========== [ Estilos Generales ] ========== */
+.button {
+  width: 100px;
+  height: 100px;
+  cursor: pointer;
+  border: none;
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
+  display: grid;
+  place-content: center;
+  transition: background 300ms, transform 200ms;
+  font-weight: 600;
 }
+.button__text {
+  position: absolute;
+  inset: 0;
+  animation: text-rotation 10s linear infinite;
 
-.button-html__text {
-    position: absolute;
-    inset: 0;
-    animation: text-rotation 10s linear infinite;
-}
-
-.button-html__text > .span {
-    font-size: 1.4rem;
+  > span {
     position: absolute;
     transform: rotate(calc(24deg * var(--index)));
-    inset: .1rem;
+    inset: 7px;
+  }
 }
-
-.button-html__circle {
-    position: relative;
-    width: 80px;
-    height: 80px;
-    overflow: hidden;
-    background: #212121;
-    color: #ffaa00;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.button__circle {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  overflow: hidden;
+  background: #212121;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-
-.button-html__icon {
-    width: 3.4rem;
-    height: 3.4rem;
+.button__icon{
+  width: 34px;
+  height: 34px;
 }
-
-.button-html__icon--copy {
-    position: absolute;
-    transform: translate(-150%, 150%);
+.button__icon--copy {
+  position: absolute;
+  transform: translate(-150%, 150%);
 }
-
-.button-html:hover {
-    color: azure;
-    background: #000000;
-    transform: scale(1.05);
+.button:hover {
+  color: #fff;
+  background: #000;
+  transform: scale(1.2);
 }
-
-.button-html:hover .button-html__icon {
-    color: #ffffff;
+.button:hover .button__icon {
+  color: #fff;
 }
-
-.button-html:hover .button-html__icon:first-child {
-    transition: transform 0.3s ease-in-out;
-    transform: translate(150%, -150%);
+.button:hover .button__icon:first-child {
+  transition: transform 0.3s ease-in-out;
+  transform: translate(150%, -150%);
 }
-
-.button-html:hover .button-html__icon--copy {
-    transition: transform 0.3s ease-in-out 0.1s;
-    transform: translate(0);
+.button:hover .button__icon--copy {
+  transition: transform 0.3s ease-in-out 0.1s;
+  transform: translate(0);
 }
-
 @keyframes text-rotation {
-    to {
+  to {
     rotate: 360deg;
-    }
+  }
 }
+.button:active {
+  transform: scale(0.95);
+}
+/* ========== [ Estilos por Boton ] ========== */
 
-.button-html:active {
-    transform: scale(0.95);
+.▣-HTML{
+  background-color: #e34f26;
+  color: #fff;
 }
+.▢-HTML{
+  color: #e34f26;
+}
+.◌-HTML {
+  position: absolute;
+  inset: 0;
+  animation: text-rotation 10s linear infinite;
 
-/* ===================================== 📕📕📕 */
-.button-css {
-    cursor: pointer;
-    border: none;
-    background: #0062ff;
-    color: #000000;
-    width: 160px;
-    height: 160px;
-    border-radius: 50%;
-    overflow: hidden;
-    position: relative;
-    display: grid;
-    place-content: center;
-    transition:
-    background 300ms,
-    transform 200ms;
-    font-weight: 600;
-}
-
-.button-css__text {
-    position: absolute;
-    inset: 0;
-    animation: text-rotation 10s linear infinite;
-}
-
-.button-css__text > .span {
-    font-size: 1.4rem;
-    position: absolute;
-    transform: rotate(calc(30deg * var(--index)));
-    inset: .1rem;
-}
-
-.button-css__circle {
-    position: relative;
-    width: 80px;
-    height: 80px;
-    overflow: hidden;
-    background: #212121;
-    color: #0077ff;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.button-css__icon {
-    width: 3.4rem;
-    height: 3.4rem;
-}
-
-.button-css__icon--copy {
-    position: absolute;
-    transform: translate(-150%, 150%);
-}
-
-.button-css:hover {
-    color: azure;
-    background: #000000;
-    transform: scale(1.05);
-}
-
-.button-css:hover .button-css__icon {
-    color: #ffffff;
-}
-
-.button-css:hover .button-css__icon:first-child {
-    transition: transform 0.3s ease-in-out;
-    transform: translate(150%, -150%);
-}
-
-.button-css:hover .button-css__icon--copy {
-    transition: transform 0.3s ease-in-out 0.1s;
-    transform: translate(0);
-}
-
-@keyframes text-rotation {
-    to {
-    rotate: 360deg;
-    }
-}
-
-.button-css:active {
-    transform: scale(0.95);
-}
-
-/* ===================================== 📕📕📕 */
-.button-js {
-    cursor: pointer;
-    border: none;
-    background: #eaff00;
-    color: #000000;
-    width: 160px;
-    height: 160px;
-    border-radius: 50%;
-    overflow: hidden;
-    position: relative;
-    display: grid;
-    place-content: center;
-    transition:
-    background 300ms,
-    transform 200ms;
-    font-weight: 600;
-}
-
-.button-js__text {
-    position: absolute;
-    inset: 0;
-    animation: text-rotation 10s linear infinite;
-}
-
-.button-js__text > .span {
-    font-size: 1.4rem;
-    position: absolute;
-    transform: rotate(calc(30deg * var(--index)));
-    inset: .1rem;
-}
-
-.button-js__circle {
-    position: relative;
-    width: 80px;
-    height: 80px;
-    overflow: hidden;
-    background: #212121;
-    color: #e5ff00;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.button-js__icon {
-    width: 3.4rem;
-    height: 3.4rem;
-}
-
-.button-js__icon--copy {
-    position: absolute;
-    transform: translate(-150%, 150%);
-}
-
-.button-js:hover {
-    color: azure;
-    background: #000000;
-    transform: scale(1.05);
-}
-
-.button-js:hover .button-js__icon {
-    color: #ffffff;
-}
-
-.button-js:hover .button-js__icon:first-child {
-    transition: transform 0.3s ease-in-out;
-    transform: translate(150%, -150%);
-}
-
-.button-js:hover .button-js__icon--copy {
-    transition: transform 0.3s ease-in-out 0.1s;
-    transform: translate(0);
-}
-
-@keyframes text-rotation {
-    to {
-    rotate: 360deg;
-    }
-}
-
-.button-js:active {
-    transform: scale(0.95);
-}
-
-/* ===================================== 📕📕📕 */
-.button-react {
-    cursor: pointer;
-    border: none;
-    background: #00fffb;
-    color: #000000;
-    width: 160px;
-    height: 160px;
-    border-radius: 50%;
-    overflow: hidden;
-    position: relative;
-    display: grid;
-    place-content: center;
-    transition:
-    background 300ms,
-    transform 200ms;
-    font-weight: 600;
-}
-
-.button-react__text {
-    position: absolute;
-    inset: 0;
-    animation: text-rotation 10s linear infinite;
-}
-
-.button-react__text > .span {
-    font-size: 1.4rem;
-    position: absolute;
-    transform: rotate(calc(30deg * var(--index)));
-    inset: .1rem;
-}
-
-.button-react__circle {
-    position: relative;
-    width: 80px;
-    height: 80px;
-    overflow: hidden;
-    background: #212121;
-    color: #00fffb;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.button-react__icon {
-    width: 3.4rem;
-    height: 3.4rem;
-}
-
-.button-react__icon--copy {
-    position: absolute;
-    transform: translate(-150%, 150%);
-}
-
-.button-react:hover {
-    color: azure;
-    background: #000000;
-    transform: scale(1.05);
-}
-
-.button-react:hover .button-react__icon {
-    color: #ffffff;
-}
-
-.button-react:hover .button-react__icon:first-child {
-    transition: transform 0.3s ease-in-out;
-    transform: translate(150%, -150%);
-}
-
-.button-react:hover .button-react__icon--copy {
-    transition: transform 0.3s ease-in-out 0.1s;
-    transform: translate(0);
-}
-
-@keyframes text-rotation {
-    to {
-    rotate: 360deg;
-    }
-}
-
-.button-react:active {
-    transform: scale(0.95);
-}
-/* ===================================== 📕📕📕 */
-.button-react-native {
-    cursor: pointer;
-    border: none;
-    background: #01c8c5;
-    color: #000000;
-    width: 160px;
-    height: 160px;
-    border-radius: 50%;
-    overflow: hidden;
-    position: relative;
-    display: grid;
-    place-content: center;
-    transition:
-    background 300ms,
-    transform 200ms;
-    font-weight: 600;
-}
-
-.button-react-native__text {
-    position: absolute;
-    inset: 0;
-    animation: text-rotation 10s linear infinite;
-}
-
-.button-react-native__text > .span {
-    font-size: 1.4rem;
-    position: absolute;
-    transform: rotate(calc(27deg * var(--index)));
-    inset: .1rem;
-}
-
-.button-react-native__circle {
-    position: relative;
-    width: 80px;
-    height: 80px;
-    overflow: hidden;
-    background: #212121;
-    color: #00fffb;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.button-react-native__icon {
-    width: 3.4rem;
-    height: 3.4rem;
-}
-
-.button-react-native__icon--copy {
-    position: absolute;
-    transform: translate(-150%, 150%);
-}
-
-.button-react-native:hover {
-    color: azure;
-    background: #000000;
-    transform: scale(1.05);
-}
-
-.button-react-native:hover .button-react-native__icon {
-    color: #ffffff;
-}
-
-.button-react-native:hover .button-react-native__icon:first-child {
-    transition: transform 0.3s ease-in-out;
-    transform: translate(150%, -150%);
-}
-
-.button-react-native:hover .button-react-native__icon--copy {
-    transition: transform 0.3s ease-in-out 0.1s;
-    transform: translate(0);
-}
-
-@keyframes text-rotation {
-    to {
-    rotate: 360deg;
-    }
-}
-
-.button-react-native:active {
-    transform: scale(0.95);
-}
-
-/* ===================================== 📕📕📕 */
-.button-php {
-    cursor: pointer;
-    border: none;
-    background: #a885ef;
-    color: #000000;
-    width: 160px;
-    height: 160px;
-    border-radius: 50%;
-    overflow: hidden;
-    position: relative;
-    display: grid;
-    place-content: center;
-    transition:
-    background 300ms,
-    transform 200ms;
-    font-weight: 600;
-}
-
-.button-php__text {
-    position: absolute;
-    inset: 0;
-    animation: text-rotation 10s linear infinite;
-}
-
-.button-php__text > .span {
-    font-size: 1.4rem;
-    position: absolute;
-    transform: rotate(calc(28deg * var(--index)));
-    inset: .1rem;
-}
-
-.button-php__circle {
-    position: relative;
-    width: 80px;
-    height: 80px;
-    overflow: hidden;
-    background: #212121;
-    color: #a885ef;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.button-php__icon {
-    width: 3.4rem;
-    height: 3.4rem;
-}
-
-.button-php__icon--copy {
-    position: absolute;
-    transform: translate(-150%, 150%);
-}
-
-.button-php:hover {
-    color: azure;
-    background: #000000;
-    transform: scale(1.05);
-}
-
-.button-php:hover .button-php__icon {
-    color: #ffffff;
-}
-
-.button-php:hover .button-php__icon:first-child {
-    transition: transform 0.3s ease-in-out;
-    transform: translate(150%, -150%);
-}
-
-.button-php:hover .button-php__icon--copy {
-    transition: transform 0.3s ease-in-out 0.1s;
-    transform: translate(0);
-}
-
-@keyframes text-rotation {
-    to {
-    rotate: 360deg;
-    }
-}
-
-.button-php:active {
-    transform: scale(0.95);
-}
-
-/* ===================================== 📕📕📕 */
-.button-tailwind {
-    cursor: pointer;
-    border: none;
-    background: #00b7ff;
-    color: #000000;
-    width: 160px;
-    height: 160px;
-    border-radius: 50%;
-    overflow: hidden;
-    position: relative;
-    display: grid;
-    place-content: center;
-    transition:
-    background 300ms,
-    transform 200ms;
-    font-weight: 600;
-}
-
-.button-tailwind__text {
-    position: absolute;
-    inset: 0;
-    animation: text-rotation 10s linear infinite;
-}
-
-.button-tailwind__text > .span {
-    font-size: 1.4rem;
+  > span {
     position: absolute;
     transform: rotate(calc(24deg * var(--index)));
-    inset: .1rem;
+    inset: 7px;
+  }
 }
-
-.button-tailwind__circle {
-    position: relative;
-    width: 80px;
-    height: 80px;
-    overflow: hidden;
-    background: #212121;
-    color: #00b7ff;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.▣-CSS {
+  background-color: #663399;
+  color: #fff;
 }
-
-.button-tailwind__icon {
-    width: 3.4rem;
-    height: 3.4rem;
+.▢-CSS {
+  color: #663399;
 }
+.◌-CSS {
+  position: absolute;
+  inset: 0;
+  animation: text-rotation 10s linear infinite;
 
-.button-tailwind__icon--copy {
+  > span {
     position: absolute;
-    transform: translate(-150%, 150%);
+    transform: rotate(calc(30deg * var(--index)));
+    inset: 7px;
+  }
 }
-
-.button-tailwind:hover {
-    color: azure;
-    background: #000000;
-    transform: scale(1.05);
+.▣-JS{
+  background-color: #dcc814e1;
+  color: #fff;
 }
-
-.button-tailwind:hover .button-tailwind__icon {
-    color: #ffffff;
+.▢-JS{
+  color: #f5e020;
 }
+.◌-JS{
+  position: absolute;
+  inset: 0;
+  animation: text-rotation 10s linear infinite;
 
-.button-tailwind:hover .button-tailwind__icon:first-child {
-    transition: transform 0.3s ease-in-out;
-    transform: translate(150%, -150%);
-}
-
-.button-tailwind:hover .button-tailwind__icon--copy {
-    transition: transform 0.3s ease-in-out 0.1s;
-    transform: translate(0);
-}
-
-@keyframes text-rotation {
-    to {
-    rotate: 360deg;
-    }
-}
-
-.button-tailwind:active {
-    transform: scale(0.95);
-}
-
-/* ===================================== 📕📕📕 */
-.button-next {
-    cursor: pointer;
-    border: none;
-    background: #0c0c0c;
-    color: #ffffff;
-    width: 160px;
-    height: 160px;
-    border-radius: 50%;
-    overflow: hidden;
-    position: relative;
-    display: grid;
-    place-content: center;
-    transition:
-    background 300ms,
-    transform 200ms;
-    font-weight: 600;
-}
-
-.button-next__text {
+  > span {
     position: absolute;
-    inset: 0;
-    animation: text-rotation 10s linear infinite;
+    transform: rotate(calc(30deg * var(--index)));
+    inset: 7px;
+  }
 }
+.▣-PHP{
+  background-color: #be77f9;
+  color: #fff;
+}
+.▢-PHP{
+  color: #be77f9;
+}
+.◌-PHP{
+  position: absolute;
+  inset: 0;
+  animation: text-rotation 10s linear infinite;
 
-.button-next__text > .span {
-    font-size: 1.4rem;
+  > span {
     position: absolute;
-    transform: rotate(calc(28deg * var(--index)));
-    inset: .1rem;
+    transform: rotate(calc(30deg * var(--index)));
+    inset: 7px;
+  }
 }
-
-.button-next__circle {
-    position: relative;
-    width: 80px;
-    height: 80px;
-    overflow: hidden;
-    background: #212121;
-    color: #ffffff;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.▣-MONGODB{
+  background-color: #47A248;
+  color: #fff;
 }
-
-.button-next__icon {
-    width: 3.4rem;
-    height: 3.4rem;
+.▢-MONGODB{
+  color: #47A248;
 }
+.◌-MONGODB{
+  position: absolute;
+  inset: 0;
+  animation: text-rotation 10s linear infinite;
 
-.button-next__icon--copy {
-    position: absolute;
-    transform: translate(-150%, 150%);
-}
-
-.button-next:hover {
-    color: rgb(0, 0, 0);
-    background: #f9f9f9;
-    transform: scale(1.05);
-}
-
-.button-next:hover .button-next__icon {
-    color: #ffffff;
-}
-
-.button-next:hover .button-next__icon:first-child {
-    transition: transform 0.3s ease-in-out;
-    transform: translate(150%, -150%);
-}
-
-.button-next:hover .button-next__icon--copy {
-    transition: transform 0.3s ease-in-out 0.1s;
-    transform: translate(0);
-}
-
-@keyframes text-rotation {
-    to {
-    rotate: 360deg;
-    }
-}
-
-.button-next:active {
-    transform: scale(0.95);
-}
-
-/* ===================================== 📕📕📕 */
-.button-astro {
-    cursor: pointer;
-    border: none;
-    background: #BC52EE;
-    color: #000000;
-    width: 160px;
-    height: 160px;
-    border-radius: 50%;
-    overflow: hidden;
-    position: relative;
-    display: grid;
-    place-content: center;
-    transition:
-    background 300ms,
-    transform 200ms;
-    font-weight: 600;
-}
-
-.button-astro__text {
-    position: absolute;
-    inset: 0;
-    animation: text-rotation 10s linear infinite;
-}
-
-.button-astro__text > .span {
-    font-size: 1.4rem;
-    position: absolute;
-    transform: rotate(calc(28deg * var(--index)));
-    inset: .1rem;
-}
-
-.button-astro__circle {
-    position: relative;
-    width: 80px;
-    height: 80px;
-    overflow: hidden;
-    background: #212121;
-    color: #BC52EE;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.button-astro__icon {
-    width: 3.4rem;
-    height: 3.4rem;
-}
-
-.button-astro__icon--copy {
-    position: absolute;
-    transform: translate(-150%, 150%);
-}
-
-.button-astro:hover {
-    color: rgb(255, 255, 255);
-    background: #000000;
-    transform: scale(1.05);
-}
-
-.button-astro:hover .button-astro__icon {
-    color: #ffffff;
-}
-
-.button-astro:hover .button-astro__icon:first-child {
-    transition: transform 0.3s ease-in-out;
-    transform: translate(150%, -150%);
-}
-
-.button-astro:hover .button-astro__icon--copy {
-    transition: transform 0.3s ease-in-out 0.1s;
-    transform: translate(0);
-}
-
-@keyframes text-rotation {
-    to {
-    rotate: 360deg;
-    }
-}
-
-.button-astro:active {
-    transform: scale(0.95);
-}
-
-/* ===================================== 📕📕📕 */
-.button-github {
-    cursor: pointer;
-    border: none;
-    background: #0c0c0c;
-    color: #ffffff;
-    width: 160px;
-    height: 160px;
-    border-radius: 50%;
-    overflow: hidden;
-    position: relative;
-    display: grid;
-    place-content: center;
-    transition:
-    background 300ms,
-    transform 200ms;
-    font-weight: 600;
-}
-
-.button-github__text {
-    position: absolute;
-    inset: 0;
-    animation: text-rotation 10s linear infinite;
-}
-
-.button-github__text > .span {
-    font-size: 1.4rem;
-    position: absolute;
-    transform: rotate(calc(22deg * var(--index)));
-    inset: .1rem;
-}
-
-.button-github__circle {
-    position: relative;
-    width: 80px;
-    height: 80px;
-    overflow: hidden;
-    background: #212121;
-    color: #ffffff;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.button-github__icon {
-    width: 3.4rem;
-    height: 3.4rem;
-}
-
-.button-github__icon--copy {
-    position: absolute;
-    transform: translate(-150%, 150%);
-}
-
-.button-github:hover {
-    color: rgb(0, 0, 0);
-    background: #f9f9f9;
-    transform: scale(1.05);
-}
-
-.button-github:hover .button-github__icon {
-    color: #ffffff;
-}
-
-.button-github:hover .button-github__icon:first-child {
-    transition: transform 0.3s ease-in-out;
-    transform: translate(150%, -150%);
-}
-
-.button-github:hover .button-github__icon--copy {
-    transition: transform 0.3s ease-in-out 0.1s;
-    transform: translate(0);
-}
-
-@keyframes text-rotation {
-    to {
-    rotate: 360deg;
-    }
-}
-
-.button-github:active {
-    transform: scale(0.95);
-}
-
-/* ===================================== 📕📕📕 */
-.button-mongoDB {
-    cursor: pointer;
-    border: none;
-    background: #47A248;
-    color: #000000;
-    width: 160px;
-    height: 160px;
-    border-radius: 50%;
-    overflow: hidden;
-    position: relative;
-    display: grid;
-    place-content: center;
-    transition:
-    background 300ms,
-    transform 200ms;
-    font-weight: 600;
-}
-
-.button-mongoDB__text {
-    position: absolute;
-    inset: 0;
-    animation: text-rotation 10s linear infinite;
-}
-
-.button-mongoDB__text > .span {
-    font-size: 1.4rem;
+  > span {
     position: absolute;
     transform: rotate(calc(20deg * var(--index)));
-    inset: .1rem;
+    inset: 7px;
+  }
 }
-
-.button-mongoDB__circle {
-    position: relative;
-    width: 80px;
-    height: 80px;
-    overflow: hidden;
-    background: #212121;
-    color: #47A248;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.▣-PYTHON{
+  background-color: #3776ab;
+  color: #fff;
 }
-
-.button-mongoDB__icon {
-    width: 3.4rem;
-    height: 3.4rem;
+.▢-PYTHON{
+  color: #3776ab;
 }
+.◌-PYTHON{
+  position: absolute;
+  inset: 0;
+  animation: text-rotation 10s linear infinite;
 
-.button-mongoDB__icon--copy {
+  > span {
     position: absolute;
-    transform: translate(-150%, 150%);
+    transform: rotate(calc(26deg * var(--index)));
+    inset: 7px;
+  }
 }
-
-.button-mongoDB:hover {
-    color: rgb(255, 255, 255);
-    background: #000000;
-    transform: scale(1.05);
+.▣-TYPESCRIPT{
+  background-color: #3178c6;
+  color: #fff;
 }
-
-.button-mongoDB:hover .button-mongoDB__icon {
-    color: #ffffff;
+.▢-TYPESCRIPT{
+  color: #3178c6;
 }
+.◌-TYPESCRIPT{
+  position: absolute;
+  inset: 0;
+  animation: text-rotation 10s linear infinite;
 
-.button-mongoDB:hover .button-mongoDB__icon:first-child {
-    transition: transform 0.3s ease-in-out;
-    transform: translate(150%, -150%);
-}
-
-.button-mongoDB:hover .button-mongoDB__icon--copy {
-    transition: transform 0.3s ease-in-out 0.1s;
-    transform: translate(0);
-}
-
-@keyframes text-rotation {
-    to {
-    rotate: 360deg;
-    }
-}
-
-.button-mongoDB:active {
-    transform: scale(0.95);
-}
-
-/* ===================================== 📕📕📕 */
-.button-python {
-    cursor: pointer;
-    border: none;
-    background: #3776AB;
-    color: #000000;
-    width: 160px;
-    height: 160px;
-    border-radius: 50%;
-    overflow: hidden;
-    position: relative;
-    display: grid;
-    place-content: center;
-    transition:
-    background 300ms,
-    transform 200ms;
-    font-weight: 600;
-}
-
-.button-python__text {
-    position: absolute;
-    inset: 0;
-    animation: text-rotation 10s linear infinite;
-}
-
-.button-python__text > .span {
-    font-size: 1.4rem;
-    position: absolute;
-    transform: rotate(calc(25deg * var(--index)));
-    inset: .1rem;
-}
-
-.button-python__circle {
-    position: relative;
-    width: 80px;
-    height: 80px;
-    overflow: hidden;
-    background: #212121;
-    color: #3776AB;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.button-python__icon {
-    width: 3.4rem;
-    height: 3.4rem;
-}
-
-.button-python__icon--copy {
-    position: absolute;
-    transform: translate(-150%, 150%);
-}
-
-.button-python:hover {
-    color: rgb(255, 255, 255);
-    background: #000000;
-    transform: scale(1.05);
-}
-
-.button-python:hover .button-python__icon {
-    color: #ffffff;
-}
-
-.button-python:hover .button-python__icon:first-child {
-    transition: transform 0.3s ease-in-out;
-    transform: translate(150%, -150%);
-}
-
-.button-python:hover .button-python__icon--copy {
-    transition: transform 0.3s ease-in-out 0.1s;
-    transform: translate(0);
-}
-
-@keyframes text-rotation {
-    to {
-    rotate: 360deg;
-    }
-}
-
-.button-python:active {
-    transform: scale(0.95);
-}
-
-/* ===================================== 📕📕📕 */
-.button-typescript {
-    cursor: pointer;
-    border: none;
-    background: #3178C6;
-    color: #000000;
-    width: 160px;
-    height: 160px;
-    border-radius: 50%;
-    overflow: hidden;
-    position: relative;
-    display: grid;
-    place-content: center;
-    transition:
-    background 300ms,
-    transform 200ms;
-    font-weight: 600;
-}
-
-.button-typescript__text {
-    position: absolute;
-    inset: 0;
-    animation: text-rotation 10s linear infinite;
-}
-
-.button-typescript__text > .span {
-    font-size: 1.4rem;
+  > span {
     position: absolute;
     transform: rotate(calc(30deg * var(--index)));
-    inset: .1rem;
+    inset: 7px;
+  }
 }
-
-.button-typescript__circle {
-    position: relative;
-    width: 80px;
-    height: 80px;
-    overflow: hidden;
-    background: #212121;
-    color: #3178C6;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.▣-MYSQL{
+  background-color: #4479a1;
+  color: #fff;
 }
-
-.button-typescript__icon {
-    width: 3rem;
-    height: 3rem;
+.▢-MYSQL{
+  color: #4479a1;
 }
+.◌-MYSQL{
+  position: absolute;
+  inset: 0;
+  animation: text-rotation 10s linear infinite;
 
-.button-typescript__icon--copy {
+  > span {
     position: absolute;
-    transform: translate(-150%, 150%);
+    transform: rotate(calc(20deg * var(--index)));
+    inset: 7px;
+  }
 }
-
-.button-typescript:hover {
-    color: rgb(255, 255, 255);
-    background: #000000;
-    transform: scale(1.05);
+.▣-NODEJS{
+  background-color: #5fa04d;
+  color: #fff;
 }
-
-.button-typescript:hover .button-typescript__icon {
-    color: #ffffff;
+.▢-NODEJS{
+  color: #5fa04d;
 }
+.◌-NODEJS{
+  position: absolute;
+  inset: 0;
+  animation: text-rotation 10s linear infinite;
 
-.button-typescript:hover .button-typescript__icon:first-child {
-    transition: transform 0.3s ease-in-out;
-    transform: translate(150%, -150%);
-}
-
-.button-typescript:hover .button-typescript__icon--copy {
-    transition: transform 0.3s ease-in-out 0.1s;
-    transform: translate(0);
-}
-
-@keyframes text-rotation {
-    to {
-    rotate: 360deg;
-    }
-}
-
-.button-typescript:active {
-    transform: scale(0.95);
-}
-
-/* ===================================== 📕📕📕 */
-.button-mysgl {
-    cursor: pointer;
-    border: none;
-    background: #4479A1;
-    color: #000000;
-    width: 160px;
-    height: 160px;
-    border-radius: 50%;
-    overflow: hidden;
-    position: relative;
-    display: grid;
-    place-content: center;
-    transition:
-    background 300ms,
-    transform 200ms;
-    font-weight: 600;
-}
-
-.button-mysgl__text {
+  > span {
     position: absolute;
-    inset: 0;
-    animation: text-rotation 10s linear infinite;
+    transform: rotate(calc(23deg * var(--index)));
+    inset: 7px;
+  }
 }
+.▣-TAILWIND{
+  background-color: #06B6D4;
+  color: #fff;
+}
+.▢-TAILWIND{
+  color: #06B6D4;
+}
+.◌-TAILWIND{
+  position: absolute;
+  inset: 0;
+  animation: text-rotation 10s linear infinite;
 
-.button-mysgl__text > .span {
-    font-size: 1.4rem;
+  > span {
+    position: absolute;
+    transform: rotate(calc(20deg * var(--index)));
+    inset: 7px;
+  }
+}
+.▣-REACT{
+  background-color: #61d4fb;
+  color: #212121;
+}
+.▢-REACT{
+  color: #61D4FB;
+}
+.◌-REACT{
+  position: absolute;
+  inset: 0;
+  animation: text-rotation 10s linear infinite;
+
+  > span {
     position: absolute;
     transform: rotate(calc(30deg * var(--index)));
-    inset: .1rem;
+    inset: 7px;
+  }
 }
-
-.button-mysgl__circle {
-    position: relative;
-    width: 80px;
-    height: 80px;
-    overflow: hidden;
-    background: #212121;
-    color: #4479A1;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.▣-REACTNATIVE{
+  background-color: #61D4FB;
+  color: #212121;
 }
-
-.button-mysgl__icon {
-    width: 3rem;
-    height: 3rem;
+.▢-REACTNATIVE{
+  color: #61D4FB;
 }
+.◌-REACTNATIVE{
+  position: absolute;
+  inset: 0;
+  animation: text-rotation 10s linear infinite;
 
-.button-mysgl__icon--copy {
+  > span {
     position: absolute;
-    transform: translate(-150%, 150%);
+    transform: rotate(calc(28deg * var(--index)));
+    inset: 7px;
+  }
 }
-
-.button-mysgl:hover {
-    color: rgb(255, 255, 255);
-    background: #000000;
-    transform: scale(1.05);
+.▣-NEXTJS{
+  background-color: #f4f4f4;
+  color: #212121;
 }
-
-.button-mysgl:hover .button-mysgl__icon {
-    color: #ffffff;
+.▢-NEXTJS{
+  color: #F4F4F4;
 }
+.◌-NEXTJS{
+  position: absolute;
+  inset: 0;
+  animation: text-rotation 10s linear infinite;
 
-.button-mysgl:hover .button-mysgl__icon:first-child {
-    transition: transform 0.3s ease-in-out;
-    transform: translate(150%, -150%);
-}
-
-.button-mysgl:hover .button-mysgl__icon--copy {
-    transition: transform 0.3s ease-in-out 0.1s;
-    transform: translate(0);
-}
-
-@keyframes text-rotation {
-    to {
-    rotate: 360deg;
-    }
-}
-
-.button-mysgl:active {
-    transform: scale(0.95);
-}
-
-/* ===================================== 📕📕📕 */
-.button-nodejs {
-    cursor: pointer;
-    border: none;
-    background: #5FA04E;
-    color: #000000;
-    width: 160px;
-    height: 160px;
-    border-radius: 50%;
-    overflow: hidden;
-    position: relative;
-    display: grid;
-    place-content: center;
-    transition:
-    background 300ms,
-    transform 200ms;
-    font-weight: 600;
-}
-
-.button-nodejs__text {
-    position: absolute;
-    inset: 0;
-    animation: text-rotation 10s linear infinite;
-}
-
-.button-nodejs__text > .span {
-    font-size: 1.4rem;
+  > span {
     position: absolute;
     transform: rotate(calc(22deg * var(--index)));
-    inset: .1rem;
+    inset: 7px;
+  }
 }
-
-.button-nodejs__circle {
-    position: relative;
-    width: 80px;
-    height: 80px;
-    overflow: hidden;
-    background: #212121;
-    color: #5FA04E;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.▣-ASTRO{
+  background-color: #bc52ee;
+  color: #fff;
 }
-
-.button-nodejs__icon {
-    width: 3rem;
-    height: 3rem;
+.▢-ASTRO{
+  color: #bc52ee;
 }
+.◌-ASTRO{
+  position: absolute;
+  inset: 0;
+  animation: text-rotation 10s linear infinite;
 
-.button-nodejs__icon--copy {
+  > span {
     position: absolute;
-    transform: translate(-150%, 150%);
+    transform: rotate(calc(20deg * var(--index)));
+    inset: 7px;
+  }
 }
-
-.button-nodejs:hover {
-    color: rgb(255, 255, 255);
-    background: #000000;
-    transform: scale(1.05);
+.▣-THREEJS{
+  background-color: #FFF;
+  color: #212121;
 }
-
-.button-nodejs:hover .button-nodejs__icon {
-    color: #ffffff;
+.▢-THREEJS{
+  color: #FFF;
 }
+.◌-THREEJS{
+  position: absolute;
+  inset: 0;
+  animation: text-rotation 10s linear infinite;
 
-.button-nodejs:hover .button-nodejs__icon:first-child {
-    transition: transform 0.3s ease-in-out;
-    transform: translate(150%, -150%);
-}
-
-.button-nodejs:hover .button-nodejs__icon--copy {
-    transition: transform 0.3s ease-in-out 0.1s;
-    transform: translate(0);
-}
-
-@keyframes text-rotation {
-    to {
-    rotate: 360deg;
-    }
-}
-
-.button-nodejs:active {
-    transform: scale(0.95);
-}
-
-/* ===================================== 📕📕📕 */
-.button-canva {
-    cursor: pointer;
-    border: none;
-    background: #00C4CC;
-    color: #000000;
-    width: 160px;
-    height: 160px;
-    border-radius: 50%;
-    overflow: hidden;
-    position: relative;
-    display: grid;
-    place-content: center;
-    transition:
-    background 300ms,
-    transform 200ms;
-    font-weight: 600;
-}
-
-.button-canva__text {
+  > span {
     position: absolute;
-    inset: 0;
-    animation: text-rotation 10s linear infinite;
+    transform: rotate(calc(20deg * var(--index)));
+    inset: 7px;
+  }
 }
+.▣-CANVA{
+  background-color: #00c4cc;
+  color: #212121;
+}
+.▢-CANVA{
+  color: #00c4cc;
+}
+.◌-CANVA{
+  position: absolute;
+  inset: 0;
+  animation: text-rotation 10s linear infinite;
 
-.button-canva__text > .span {
-    font-size: 1.4rem;
+  > span {
     position: absolute;
     transform: rotate(calc(30deg * var(--index)));
-    inset: .1rem;
+    inset: 7px;
+  }
 }
-
-.button-canva__circle {
-    position: relative;
-    width: 80px;
-    height: 80px;
-    overflow: hidden;
-    background: #212121;
-    color: #00C4CC;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.▣-GITHUB{
+  background-color: #fff;
+  color: #212121;
 }
-
-.button-canva__icon {
-    width: 3rem;
-    height: 3rem;
+.▢-GITHUB{
+  color: #fff;
 }
+.◌-GITHUB{
+  position: absolute;
+  inset: 0;
+  animation: text-rotation 10s linear infinite;
 
-.button-canva__icon--copy {
+  > span {
     position: absolute;
-    transform: translate(-150%, 150%);
+    transform: rotate(calc(17deg * var(--index)));
+    inset: 7px;
+  }
 }
+.▣-GIT{
+  background-color: #f05032;
+  color: #fff;
+}
+.▢-GIT{
+  color: #f05032;
+}
+.◌-GIT{
+  position: absolute;
+  inset: 0;
+  animation: text-rotation 10s linear infinite;
 
-.button-canva:hover {
-    color: rgb(255, 255, 255);
-    background: #000000;
-    transform: scale(1.05);
+  > span {
+    position: absolute;
+    transform: rotate(calc(22deg * var(--index)));
+    inset: 7px;
+  }
 }
+/* .▣-{
+  background-color: #f55c20;
+  color: #fff;
+}
+.▢-{
+  color: #f55c20;
+}
+.◌-{
+  position: absolute;
+  inset: 0;
+  animation: text-rotation 10s linear infinite;
 
-.button-canva:hover .button-canva__icon {
-    color: #ffffff;
-}
-
-.button-canva:hover .button-canva__icon:first-child {
-    transition: transform 0.3s ease-in-out;
-    transform: translate(150%, -150%);
-}
-
-.button-canva:hover .button-canva__icon--copy {
-    transition: transform 0.3s ease-in-out 0.1s;
-    transform: translate(0);
-}
-
-@keyframes text-rotation {
-    to {
-    rotate: 360deg;
-    }
-}
-
-.button-canva:active {
-    transform: scale(0.95);
-}
+  > span {
+    position: absolute;
+    transform: rotate(calc(24deg * var(--index)));
+    inset: 7px;
+  }
+} */

@@ -1,36 +1,28 @@
+import { RiCopyrightLine, RiGithubLine, RiInstagramLine, RiLinkedinLine, RiMailAiLine, RiWhatsappLine } from "@remixicon/react";
 import "../Styles/Footer.css";
-import { RiCopyrightLine, RiGithubLine, RiInstagramLine, RiMailAiLine, RiWhatsappLine } from "@remixicon/react";
 
-
-function Footer () {
-    return(
-        <div className="ContainerFooter">
-            <div className="Socials">
-                <a href="https://mail.google.com/mail/?view=cm&to=d3vel0perguillermo@gmail.com" target="back">
-                    <div className="ContainerIcons">
-                        <RiMailAiLine className="IconFooter" alt="Email"/>
-                    </div>
-                </a>
-                <a href="https://github.com/david-guillermo" target="back">
-                    <div className="ContainerIcons">
-                        <RiGithubLine className="IconFooter" alt="Github"/>
-                    </div>
-                </a>
-                <a href="https://www.instagram.com/david_guiller1?igsh=Z3VpZGI5Z21sYmdt" target="back">
-                    <div className="ContainerIcons">
-                        <RiInstagramLine className="IconFooter" alt="Instagram"/>
-                    </div>
-                </a>
-                <a href="https://wa.me/584125936297" target="back">
-                    <div className="ContainerIcons">
-                        <RiWhatsappLine className="IconFooter" alt="WhatsApp"/>
-                    </div>
-                </a>
-            </div>
-            <div className="Copy">
-                <h1 className="CopyRight">copyright<RiCopyrightLine className="CopyRight-Icon"/> 2025 - Guillermo Arismendi</h1>
-            </div>
+function Footer() {
+    return (
+    <footer className="footer">
+        <span><RiCopyrightLine/> {new Date().getFullYear()} Guillermo Arismendi. Todos los derechos reservados.</span>
+        <div className="footer-links">
+            <a href="https://github.com/david-guillermo" target="_blank">
+                <RiGithubLine/>
+            </a>
+            <a href="https://mail.google.com/mail/?view=cm&to=d3vel0perguillermo@gmail.com" target="_blank">
+                <RiMailAiLine/>
+            </a>
+            <a href="https://www.instagram.com/david_guiller1?igsh=Z3VpZGI5Z21sYmdt" target="_blank">
+                <RiInstagramLine/>
+            </a>
+            <a href="https://wa.me/584125936297?text=Hola, vi tu portafolio y me gustaría hablar contigo sobre una oportunidad laboral 📬🎉" target="_blank">
+                <RiWhatsappLine/>
+            </a>
+            <a href="https://www.linkedin.com/in/guillermo-arismendi-7993b7307/" target="_blank">
+                <RiLinkedinLine/>
+            </a>
         </div>
-    )
+    </footer>
+    );
 }
 export { Footer };

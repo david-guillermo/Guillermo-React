@@ -1,5 +1,4 @@
 import "@fontsource/audiowide";
-import "../Styles/ProyectoCard.css";
 import REACT from "../../assets/svg/React.svg";
 import TAILWIND from "../../assets/svg/Tailwind.svg";
 import AXIOS from "../../assets/svg/Axios.svg";
@@ -13,11 +12,11 @@ import SHADCN from "../../assets/svg/Shadcnui.svg";
 import TYPESCRIPT from "../../assets/svg/TypeScript.svg";
 import FotoDePerfil from "../../assets/FotoDePerfil.png";
 import { RiArrowGoForwardLine, RiGithubLine, RiCheckboxBlankCircleLine, RiCheckboxCircleLine } from "@remixicon/react";
+import "../Styles/ProyectosCards.css";
 
-
-function ProyectoCard() {
-    return (
-        <>
+function ProyectosCards () {
+    return(
+        <div className="Container-AllCards">
             <div className="main">
                 <div className="card card_1">
                     <div className="fl">
@@ -46,9 +45,9 @@ function ProyectoCard() {
                                     <a href="https://github.com/david-guillermo/Responsive__Online" target="back">
                                         <RiGithubLine className="icon" />
                                     </a>
-                                    <a href="">
-                                        {/* <RiArrowGoForwardLine className="icon" /> */}
-                                    </a>
+                                    {/* <a href="">
+                                        <RiArrowGoForwardLine className="icon" />
+                                    </a> */}
                                 </div>
                                 <span className="tooltip-text">
                                     Una pagina web desarrollada para programadores web, donde ayuda al desarrollador a ver las diferentes resoluciones de su proyecto, agilizando asi el desarrollo responsive.
@@ -96,9 +95,9 @@ function ProyectoCard() {
                                     <a href="https://github.com/david-guillermo/Neptune" target="back">
                                         <RiGithubLine className="icon" />
                                     </a>
-                                    <a href="">
-                                        {/* <RiArrowGoForwardLine className="icon" /> */}
-                                    </a>
+                                    {/* <a href="">
+                                        <RiArrowGoForwardLine className="icon" />
+                                    </a> */}
                                 </div>
                                 <span className="tooltip-text">
                                     Neptune es una plataforma para dueños de negocios que quieren su propia app de tienda, con su marca y catálogo. No es un marketplace: tu negocio es el protagonista, con una app única y personalizada.
@@ -142,9 +141,9 @@ function ProyectoCard() {
                                     <a href="https://github.com/Haonter-ERP" target="back">
                                         <RiGithubLine className="icon" />
                                     </a>
-                                    <a href="">
-                                        {/* <RiArrowGoForwardLine className="icon" /> */}
-                                    </a>
+                                    {/* <a href="">
+                                        <RiArrowGoForwardLine className="icon" />
+                                    </a> */}
                                 </div>
                                 <span className="tooltip-text">
                                     ERP para gestión de ventas, productos, inventario, facturación, contratos y envío de correos. Un sistema pensado para aportar valor a empresas, siendo también mi proyecto más ambicioso hasta hoy.
@@ -165,8 +164,7 @@ function ProyectoCard() {
                     </div>
                 </div>
             </div>
-            {/* =========================================== */}
-        </>
-    );
+        </div>
+    )
 }
-export { ProyectoCard };
+export { ProyectosCards };

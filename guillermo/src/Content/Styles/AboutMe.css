@@ -1,31 +1,32 @@
 .AboutContainer{
-    width: 320px;
-    height: 390px;
+    width: 280px;
+    height: auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 3rem;
+    text-align: center;
+    padding: 1.6rem;
+    gap: 20px;
     border-left: 6px solid #d5d4d1;
-    /* background-color: aqua; */
 
     .ContainerImgAbout{
         width: 100%;
         color: #fff;
         display: flex;
         align-items: center;
-        gap: 1.3rem;
+        gap: 1.9rem;
     }
     .ImgAbout{
-        width: 120px;
-        height: 120px;
+        width: 100px;
+        height: 100px;
         border: 2px #c7c3bb solid;
         border-radius: 50%;
     }
     .AboutMe{
         font-family: 'Audiowide', sans-serif;
         letter-spacing: 1px;
-        font-size: 2rem;
+        font-size: 2.3rem;
     }
     .AboutDescription{
         font-size: 1.1rem;
