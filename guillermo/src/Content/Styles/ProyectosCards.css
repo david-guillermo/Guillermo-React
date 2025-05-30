@@ -1,209 +1,357 @@
 .Container-AllCards{
-    /* width: max-content; */
-    /* height: max-content; */
-    gap: 14rem;
     display: grid;
-    flex-wrap: wrap;
-    /* justify-content: center; */
-    /* align-items: center; */
-    grid-template-columns: repeat( 2, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(auto, auto);
-    /* background-color: #00d5ff66; */
+    gap: 10rem;
 }
 @media (max-width: 768px){
     .Container-AllCards{
-        padding: 1rem;
         display: grid;
-        grid-template-columns: repeat( 2, 1fr);
+        grid-template-columns: repeat(2, 1fr);
         grid-template-rows: repeat(auto, auto);
+        gap: 2rem;
     }
 }
 @media (max-width: 480px){
     .Container-AllCards{
-        width: 100%;
-        padding: 2rem;
-        gap: 14rem;
+        padding: 1rem;
         display: grid;
-        grid-template-columns: repeat( 1, 1fr);
+        grid-template-columns: repeat(1, 1fr);
         grid-template-rows: repeat(auto, auto);
+        gap: 10rem;
     }
 }
-.main{
-    width: 13rem;
-    height: 8rem;
-}
-.card_1{ background-image: url(../../assets/Images/NOVAFLEX.png);}
-.card_2{ background-image: url(../../assets/Images/Neptune.jpg);}
-.card_3{ background-image: url(../../assets/Images/Proyecto-ERP.webp);}
-.card{
-    width: 16rem;
-    height: 11rem;
-    background-size: 100% 100%;
-    border-radius: 7px;
-}
-.fl {
-    display: flex;
-    justify-content: flex-end;
-    transition: .2s ease-in-out;
-}
-.fl:hover .fullscreen {
-    scale: 1.2;
-}
-.fl:hover .fullscreen_svg {
-    fill: rgb(255, 255, 255);
-}
-.fullscreen {
-    height: 2em;
-    margin: 1em;
-}
-.Icon_Progress{
-    width: 2rem;
-    height: 2rem;
-    color: #ffae00;
-}
-.Icon_Complete{
-    width: 2rem;
-    height: 2rem;
-    color: #0fff03;
-}
-.card_back {
-    width: 18rem;
-    height: 16rem;
-    position: absolute;
-    background-color: rgba(255, 255, 255, 0.145);
-    border-radius: 8px;
-    margin-top: -5em;
-    margin-left: 0.8em;
-    transition: .2s ease-in-out;
-    z-index: -1;
-}
-.main:hover .card_back {
-    margin-top: -7.25em;
-    margin-left: .100rem;
-    scale: 1.2;
-    height: 18em;
-    cursor: pointer;
-    border: .01rem solid rgba(255, 255, 255, 0.423);
-}
-.main:hover .fl {
-    opacity: 1;
-    cursor: pointer;
-    margin-right: 0.5em;
-}
-.data {
+.CardProyect {
     width: 290px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
-    margin-top: 1rem;
-}
-.Box-description{
-    width: 20%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.tooltip {
+    height: 440px;
     position: relative;
-    display: inline-block;
-    cursor: pointer;
-}
-.tooltip-text {
-    visibility: hidden;
-    width: 240px;
-    backdrop-filter: blur(20px);
-    background-color: rgba(15, 15, 15, 0.611);
-    color: #ffffff;
-    text-align: center;
-    border-radius: 6px;
-    padding: 1.1rem;
-    position: absolute;
-    z-index: 1;
-    bottom: 195%;
-    transform: translateX(-85%);
-    opacity: 0;
-    transition: opacity 0.3s;
-    font-size: 1rem;
-}
-.main:hover .tooltip-text {
-    visibility: visible;
-    opacity: 1;
-}
-.img_perfil {
-    width: 45px;
-    height: 40px;
-    background-color: #ffffff92;
-    border-radius: 5px;
+    padding: 1rem;
+    border: 1px solid #fff;
+    border-radius: 10px;
     overflow: hidden;
+    background: rgba(255, 255, 255, 0.071);
+    backdrop-filter: blur(200px);
+    transition: all 0.3s ease;
 }
-.imgPerfil{
+
+.ImgProyectCard {
+    width: 100%;
+    height: 360px;
+    border: #ffffff23 1px solid;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 800ms ease-in-out;
+    position: relative;
+}
+
+/* Contenedor del carrusel */
+.carousel-container {
     width: 100%;
     height: 100%;
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
 }
-.text {
-    width: 220px;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    margin-left: .30rem;
-    color: white;
-    font-size: .90rem;
-    font-family: 'Audiowide', sans-serif;
+
+.ImgProyect {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: filter 800ms ease-in-out;
 }
-.text_m {
-    font-weight: 600;
-    font-size: 1.4rem;
-    color: rgb(255, 255, 255);
-    letter-spacing: 2px;
-    text-shadow: 2px 2px 4px rgb(0, 0, 0);
-}
-.text_s {
-    font-size: 0.8rem;
-    color: #9a9a9a;
-}
-.btns {
-    display: flex;
-    gap: 0.5em;
-    transition: .2s ease-in-out;
-}
-.views {
+
+/* Botones de navegación del carrusel */
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 1.8em;
-    border-radius: 4px;
-    opacity: 0;
-    transition: .28s ease-in-out;
-    gap: .70rem;
-}
-.views:hover {
-    background-color: #5a5f7300;
-}
-.main:hover .views {
-    margin-top: .20rem;
-    opacity: 1;
-}
-.card_content {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.Imagen_Proyecto {
-    font-size: 13px;
-    width: 1.2em;
-    height: 3.3em;
-}
-.icon{
-    width: 1.6rem;
-    height: 1.6rem;
-    color: #fff;
-}
-.BoxButtons{
     cursor: pointer;
-    border: none;
+    z-index: 10;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
 }
-.views_icons{
-    width: 1.6rem;
-    height: 1.6rem;
+
+.carousel-btn:hover {
+    background: rgba(0, 0, 0, 0.7);
+    border-color: rgba(255, 255, 255, 0.6);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.carousel-btn-prev {
+    left: 10px;
+}
+
+.carousel-btn-next {
+    right: 10px;
+}
+
+.carousel-icon {
+    color: #fff;
+    width: 18px;
+    height: 18px;
+}
+
+/* Indicadores del carrusel */
+.carousel-indicators {
+    position: absolute;
+    bottom: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+    z-index: 10;
+}
+
+.carousel-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    background: rgba(255, 255, 255, 0.3);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+}
+
+.carousel-dot:hover {
+    background: rgba(255, 255, 255, 0.6);
+    transform: scale(1.2);
+}
+
+.carousel-dot.active {
+    background: rgba(255, 255, 255, 0.9);
+    border-color: #fff;
+    transform: scale(1.1);
+}
+
+.Perfil-Card {
+    width: 100%;
+    height: 60px;
+    gap: 8px;
+    margin-top: 12px;
+    padding: 0.20rem;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.Perfil-Photo {
+    width: 55px;
+    height: 55px;
+    border-radius: 12px;
+    border: 1px solid #fff;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.ImgPerfil {
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    object-fit: cover;
+}
+
+.Perfil-Info {
+    width: 80%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    flex-direction: column;
+    padding-left: 12px;
+}
+
+.Name-Proyect {
+    color: #ffffff;
+    font-family: 'Audiowide', sans-serif;
+    font-size: 1rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.Name-Author {
+    color: #949494;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 0.90rem;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+}
+
+.TecsGrid {
+    position: absolute;
+    bottom: 76px;
+    left: 16px;
+    right: 16px;
+    height: 60px;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    padding: .20rem;
+    gap: 10px;
+    border-radius: 8px;
+    opacity: 0;
+    transform: translateY(0);
+    transition: all 800ms ease-in-out;
+    transition-delay: 0ms;
+    /* background-color: aqua; */
+}
+
+.DescriptionProyect {
+    position: absolute;
+    bottom: 16px;
+    left: 16px;
+    right: 16px;
+    height: 180px;
+    display: flex;
+    align-items: flex-start;
+    padding: 1rem;
+    backdrop-filter: blur(20px);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    overflow: hidden;
+    opacity: 0;
+    /* transform: translateY(20px); */
+    transition: all 400ms ease-in-out;
+    transition-delay: 0ms;
+}
+
+.DescriptionText {
+    color: #ffffff;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    letter-spacing: 1px;
+    font-size: .90rem;
+    font-weight: 500;
+    text-align: justify;
+    line-height: 1.4;
+}
+
+.tech-icons {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+}
+.Icon-Svg_TEC{
+    width: 26px;
+    height: 26px;
+}
+
+.tech-icon {
+    width: 100%;
+    height: 30px;
+    color: #fff;
+    flex-wrap: wrap;
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+    transition: all 0.3s ease;
+    /* background-color: palegreen; */
+}
+
+.Indicador-Button{
+    width: 281px;
+    height: 51px;
+    padding: .30rem;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    z-index: 1;
+}
+
+.Indicador{
+    width: 100%;
+    gap: 0.50rem;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+}
+.Icon-Indicador{
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.Terminado{
+    color: chartreuse;
+}
+.Estado-Terminado{
+    color: chartreuse;
+    letter-spacing: .10rem;
+    font-size: 1rem;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.Proceso{
+    color: orangered;
+}
+.Estado-Proceso{
+    color: orangered;
+    letter-spacing: .10rem;
+    font-size: 1rem;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.Button{
+    width: 100%;
+    height: 100%;
+    padding-right: .80rem;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+
+.Button-Deploy{
+    width: 32px;
+    height: 32px;
+    color: #fff;
+    border: 2px solid #fff;
+    border-radius: 20%;
+    background-color: rgba(248, 248, 248, 0.122);
+    transition: all 0.3s ease;
+    backdrop-filter: blur(40px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Animación activada SOLO por el botón */
+.CardProyect.expanded {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(255, 255, 255, 0.1);
+}
+
+.CardProyect.expanded .ImgProyectCard {
+    height: 60px;
+}
+
+.CardProyect.expanded .ImgProyect {
+    filter: brightness(0.6);
+}
+
+.CardProyect.expanded .TecsGrid {
+    opacity: 1;
+    bottom: 244px;
+}
+
+.CardProyect.expanded .DescriptionProyect {
+    opacity: 1;
+    bottom: 20px;
+    transition-delay: 400ms;
+}
+
+/* Ocultar controles del carrusel cuando la imagen está contraída */
+.CardProyect.expanded .carousel-btn,
+.CardProyect.expanded .carousel-indicators {
+    opacity: 0.3;
+    pointer-events: none;
 }

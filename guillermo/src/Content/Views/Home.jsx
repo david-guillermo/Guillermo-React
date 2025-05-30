@@ -3,7 +3,8 @@ import "../Styles/Home.css";
 import { HomePage } from "../Components/HomePage";
 import { AboutMe } from "../Components/AboutMe";
 import { SnakeGame } from "../Components/SnakeGame";
-import { ProyectosCards } from "../Components/ProyectosCards";
+import { ListaProyectos } from "../Components/ListaProyectos";
+// import { ProyectosCards } from "../Components/ProyectosCards";
 import { Habilidades } from "../Components/Habilidades";
 import { Footer } from "../Components/Footer";
 
@@ -18,7 +19,8 @@ function Home (){
                 <SnakeGame />
             </div>
             <div className="Proyectos_Portfolio">
-                <ProyectosCards/>
+                <ListaProyectos/>
+                {/* <ProyectosCards/> */}
             </div>
             <div className="Habilidades_Portfolio">
                 <Habilidades/>
