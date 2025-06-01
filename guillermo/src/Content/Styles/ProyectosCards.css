@@ -233,10 +233,10 @@
 
 .DescriptionProyect {
     position: absolute;
-    bottom: 16px;
+    bottom: 12px;
     left: 16px;
     right: 16px;
-    height: 180px;
+    height: 160px;
     display: flex;
     align-items: flex-start;
     padding: 1rem;
@@ -254,7 +254,7 @@
     color: #ffffff;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     letter-spacing: 1px;
-    font-size: .90rem;
+    font-size: .88rem;
     font-weight: 500;
     text-align: justify;
     line-height: 1.4;
@@ -272,17 +272,46 @@
 
 .tech-icon {
     width: 100%;
-    height: 30px;
     color: #fff;
     gap: 0.30rem;
     flex-wrap: wrap;
     display: flex;
     align-items: center;
-    /* justify-content: center; */
     transition: all 0.3s ease;
-    /* background-color: palegreen; */
+    /* background-color: #949494; */
 }
-
+.GuthubViewPage{
+    margin-left: 10px;
+    gap: 8px;
+    display: flex;
+    z-index: 1;
+}
+.Button-Links{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    border: 1px solid #fff;
+    backdrop-filter: blur(20px);
+    background-color: #fcfcfc19;
+    z-index: 1;
+}
+.icon-Links{
+    width: 28px;
+    height: 28px;
+    color: #fff;
+    z-index: 1;
+    background-color: #ffffff00;
+}
+.Indicador{
+    width: 100%;
+    height: 30px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 8px;
+    flex-direction: row;
+}
 .Indicador-Button{
     width: 281px;
     height: 51px;
@@ -293,22 +322,6 @@
     position: absolute;
     z-index: 1;
 }
-
-.Indicador{
-    width: 100%;
-    gap: 0.50rem;
-    display: flex;
-    align-items: center;
-    justify-content: start;
-}
-.Icon-Indicador{
-    width: 28px;
-    height: 28px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
 .Terminado{
     color: chartreuse;
 }

@@ -5,11 +5,13 @@ RiArrowUpSLine,
 RiArrowLeftSLine,
 RiArrowRightSLine,
 RiCheckboxBlankCircleLine,
-RiCheckboxCircleLine
+RiCheckboxCircleLine,
+RiGithubLine,
+RiArrowTurnForwardFill
 } from "@remixicon/react";
 import "../Styles/ProyectosCards.css";
 
-function ProyectosCard({ titulo, autor, imagenes, estado, descripcion, tecnologias }) {
+function ProyectosCard({ titulo, autor, imagenes, estado, descripcion, tecnologias, github, web }) {
 const [isExpanded, setIsExpanded] = useState(false);
 const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
@@ -21,10 +23,26 @@ const goToImage = (index) => setCurrentImageIndex(index);
 return (
     <div className={`CardProyect ${isExpanded ? 'expanded' : ''}`}>
     <div className="Indicador-Button">
+        <div className="GuthubViewPage">
+    <button
+        className="Button-Links"
+        key="github"
+        onClick={() => window.open(github, '_blank')}
+    >
+        <RiGithubLine className="icon-Links" />
+    </button>
+    <button
+        className="Button-Links"
+        key="web"
+        onClick={() => window.open(web, '_blank')}
+    >
+        <RiArrowTurnForwardFill className="icon-Links" />
+    </button>
+</div>
         <div className="Button">
-        <button className="Button-Deploy" onClick={handleButtonClick}>
-            <RiArrowUpSLine className="Icon-Deploy" />
-        </button>
+            <button className="Button-Deploy" onClick={handleButtonClick}>
+                <RiArrowUpSLine className="Icon-Deploy" />
+            </button>
         </div>
     </div>
     <div className="ImgProyectCard">

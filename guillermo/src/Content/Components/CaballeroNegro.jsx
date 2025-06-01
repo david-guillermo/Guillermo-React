@@ -28,7 +28,11 @@ function CaballeroNegro() {
             </div>
         )}
         {showFinalLabel && (
-            <div className="Caballero-label show-final"><span className="Mis-redes">Mis redes</span></div>
+            <div className="Caballero-label show-final">
+                <button className="btn-descarga-cv" onClick={() => { const link = document.createElement('a'); link.href = '/CV_Guillermo_Arismendi.pdf'; link.download = 'CV_Guillermo_Arismendi.pdf'; document.body.appendChild(link); link.click(); document.body.removeChild(link); }} >
+                    ¡Descarga mi cv!
+                </button>
+            </div>
         )}
         <div className={`Caballero-character ${start ? "animate" : ""}`}>
             <img className="CaballeroNegro" src={CABALLERONEGRO} alt="CaballeroNegro" />
