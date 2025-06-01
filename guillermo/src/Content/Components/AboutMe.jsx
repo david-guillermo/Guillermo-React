@@ -1,11 +1,11 @@
-import FotoDePerfil from "../../assets/FotoDePerfil.png";
+import FOTOLOGO from "../../assets/Logo-Guillermo.png";
 import "../Styles/AboutMe.css";
 
 function AboutMe (){
     return(
         <div className="AboutContainer">
             <div className="ContainerImgAbout">
-                <img className="ImgAbout" src={FotoDePerfil} alt="" />
+                <img className="ImgAbout" src={FOTOLOGO} alt="" />
                 <h1 className="AboutMe">Sobre mi</h1>
             </div>
             <div className="AboutDescription">

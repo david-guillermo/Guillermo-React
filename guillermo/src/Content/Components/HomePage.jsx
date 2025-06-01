@@ -1,5 +1,5 @@
 import "../Styles/HomePage.css";
-import FotoDePerfil from "../../assets/FotoDePerfilReal.png";
+import FotoDePerfil from "../../assets/Foto-Perfil.png";
 import { CaballeroNegro } from "./CaballeroNegro";
 // import CABALLERO from "../../assets/Caballero/CaballeroNegro.gif";
 

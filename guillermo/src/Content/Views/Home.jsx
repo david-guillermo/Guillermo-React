@@ -4,7 +4,6 @@ import { HomePage } from "../Components/HomePage";
 import { AboutMe } from "../Components/AboutMe";
 import { SnakeGame } from "../Components/SnakeGame";
 import { ListaProyectos } from "../Components/ListaProyectos";
-// import { ProyectosCards } from "../Components/ProyectosCards";
 import { Habilidades } from "../Components/Habilidades";
 import { Footer } from "../Components/Footer";
 
@@ -12,15 +11,14 @@ function Home (){
     return(
         <div className="AllPortfolio">
             <div className="HomePage_Portfolio">
-                <HomePage />
+                <HomePage/>
             </div>
             <div className="AboutMe-Juego_Portfolio">
-                <AboutMe />
-                <SnakeGame />
+                <AboutMe/>
+                <SnakeGame/>
             </div>
             <div className="Proyectos_Portfolio">
                 <ListaProyectos/>
-                {/* <ProyectosCards/> */}
             </div>
             <div className="Habilidades_Portfolio">
                 <Habilidades/>

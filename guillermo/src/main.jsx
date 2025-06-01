@@ -2,6 +2,7 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import ReactDOM from "react-dom/client";
 import "./index.css";
+import "@fontsource/audiowide";
 
 // ==================================👀======================================
 import { Home } from "./Content/Views/Home";

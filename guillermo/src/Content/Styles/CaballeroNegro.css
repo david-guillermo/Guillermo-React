@@ -1,15 +1,20 @@
-.kratos-container {
+
+.Caballero-container {
     width: 300px;
     height: 200px;
+    border-radius: 20px;
     position: relative;
-    border-bottom: 4px solid white;
+    border-bottom: 5px solid rgb(0, 0, 0);
     margin: 20px auto;
     cursor: pointer;
     overflow: hidden;
-    background-color: #1e1e1e00;
+    background-image: url(../../assets/Caballero/Fondo-CaballeroNegro.png);
+    background-size: cover;
+    background-position: bottom;
+    background-repeat: no-repeat;
 }
 
-.kratos-character {
+.Caballero-character {
     width: 32px;
     height: 32px;
     position: absolute;
@@ -17,42 +22,87 @@
     left: -32px;
 }
 
-.CaballeroNegro{
+.CaballeroNegro {
     width: 100px;
     height: 100px;
 }
 
-.kratos-character.animate {
+.Caballero-character.animate {
     animation: walk 4s linear forwards;
 }
 
 @keyframes walk {
-    0%   { left: -32px; }
+    0% { left: -32px; }
     100% { left: 300px; }
 }
 
 .social-icons {
     position: absolute;
-    bottom: 36px;
+    bottom: 20px;
     left: 10px;
     display: flex;
-    gap: 8px;
+    gap: 20px;
+    pointer-events: none; /* deshabilita clics hasta que estén activas */
 }
 
 .icon {
-    width: 24px;
-    height: 24px;
+    width: 45px;
+    height: 45px;
     opacity: 0;
-    transform: scale(0.5);
-    transition: all 0.4s ease;
+    transform: translateY(-150px) scale(0.5);
+    transition: transform 0.5s ease, opacity 0.5s ease;
 }
 
 .reveal {
     opacity: 1;
-    transform: scale(1);
+    transform: translateY(0) scale(1);
+    pointer-events: auto;
 }
 
 .delay-1 { transition-delay: 1s; }
-.delay-2 { transition-delay: 2s; }
-.delay-3 { transition-delay: 3s; }
-.delay-4 { transition-delay: 4s; }
+.delay-2 { transition-delay: 1.8s; }
+.delay-3 { transition-delay: 2.6s; }
+.delay-4 { transition-delay: 3.4s; }
+
+.Caballero-label {
+    width: 100%;
+    position: absolute;
+    text-align: center;
+    top: 50px;
+    transform: translateY(-50%);
+    pointer-events: none;
+    z-index: 1;
+    transition: opacity 0.3s ease;
+}
+.Contactame{
+    color: #26ed9b;
+    font-family: 'Audiowide', sans-serif;
+    letter-spacing: 2px;
+    font-size: 1.8rem;
+}
+.haz-click{
+    color: white;
+    font-family: 'Audiowide', sans-serif;
+    letter-spacing: 1px;
+    font-size: 1.2rem;
+}
+.Mis-redes{
+    font-family: 'Audiowide', sans-serif;
+    font-size: 2rem;
+    letter-spacing: 2px;
+    color: #26ed9b;
+}
+.Caballero-label.hidden {
+    opacity: 0;
+}
+
+.Caballero-label.show-final {
+    top: 40px;
+    opacity: 1;
+    animation: fadeInText 0.5s ease forwards;
+}
+
+@keyframes fadeInText {
+    0% { opacity: 0; transform: translateY(0); }
+    100% { opacity: 1; transform: translateY(0); }
+}
