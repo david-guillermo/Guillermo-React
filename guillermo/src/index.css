@@ -7,7 +7,7 @@ body {
     background-size: 200% 200%;
     animation: aurora 14s ease-in-out infinite;
 }
-/* @keyframes aurora {
+@keyframes aurora {
     0% {
         background-position: 0% 50%;
     }
@@ -17,4 +17,4 @@ body {
     100% {
         background-position: 0% 50%;
     }
-} */
+}
