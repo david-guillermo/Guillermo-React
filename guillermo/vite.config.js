@@ -3,6 +3,11 @@ import react from '@vitejs/plugin-react' // o el plugin que uses
 
 export default defineConfig({
   plugins: [react()],
+  base: './', // Importante para rutas relativas
+  build: {
+    outDir: 'dist',
+    assetsDir: 'assets'
+  },
   server: {
     host: true, // Permite conexiones externas
     allowedHosts: [
